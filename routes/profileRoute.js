@@ -1,5 +1,5 @@
 const express = require('express');
-const { getProfile, passwordReset } = require('../controller/userController');
+const { getProfile, passwordReset } = require('../controller/profileController');
 const verifyToken = require('../middleware/authMiddleware');
 
 const router = express.Router();
