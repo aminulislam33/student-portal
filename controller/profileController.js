@@ -12,10 +12,10 @@ const getProfile = async(req,res)=>{
 };
 
 const updateProfile = async (req, res) => {
+  const { fullName, phone, photo } = req.body;
+  const userId = req.userId;
+
     try {
-      const userId = req.userId;
-      const { fullName, phone, photo } = req.body;
-  
       const updatedUser = await User.findByIdAndUpdate(
         userId,
         { fullName, phone, photo },
@@ -23,7 +23,7 @@ const updateProfile = async (req, res) => {
       ).select('-password');
   
       if (!updatedUser) return res.status(404).json({ message: 'User not found' });
-      res.status(200).json(updatedUser);
+      res.status(200).json({message: "Profile updated successfully", updatedUser});
     } catch (error) {
       res.status(500).json({ message: 'Server error', error });
     }
@@ -31,10 +31,15 @@ const updateProfile = async (req, res) => {
 
 const changePassword = async (req, res) => {
   const { oldPassword, newPassword } = req.body;
+  const userId = req.userId;
 
   try {
-    const userId = req.userId;
     const user = await User.findById(userId);
+
+    console.log("oldPassword: ", oldPassword)
+    console.log("newPassword: ", newPassword)
+    console.log("userId: ", userId)
+    console.log("user: ", user)
 
     if (!user) return res.status(404).json({ message: 'User not found' });
 

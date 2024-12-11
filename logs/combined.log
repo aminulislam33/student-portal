@@ -58,3 +58,23 @@
 2024-12-11 20:37:13 [INFO]: Response for GET /api/admin/users - Status: 500 - Duration: 18ms
 2024-12-11 20:38:09 [INFO]: Incoming GET request to /api/admin/users
 2024-12-11 20:38:09 [INFO]: Response for GET /api/admin/users - Status: 200 - Duration: 39ms
+2024-12-11 21:04:35 [INFO]: Incoming GET request to /api/auth/login
+2024-12-11 21:04:35 [INFO]: Response for GET /api/auth/login - Status: 404 - Duration: 2ms
+2024-12-11 21:04:46 [INFO]: Incoming POST request to /api/auth/login
+2024-12-11 21:04:46 [INFO]: Response for POST /api/auth/login - Status: 200 - Duration: 47ms
+2024-12-11 21:05:27 [INFO]: Incoming GET request to /api/profile
+2024-12-11 21:05:27 [INFO]: Response for GET /api/profile - Status: 201 - Duration: 3ms
+2024-12-11 21:07:26 [INFO]: Incoming PUT request to /api/profile/update
+2024-12-11 21:07:26 [INFO]: Response for PUT /api/profile/update - Status: 200 - Duration: 5ms
+2024-12-11 21:11:04 [INFO]: Incoming PUT request to /api/profile/update
+2024-12-11 21:11:04 [INFO]: Response for PUT /api/profile/update - Status: 200 - Duration: 13ms
+2024-12-11 21:12:02 [INFO]: Incoming PUT request to /api/profile/update
+2024-12-11 21:12:02 [INFO]: Response for PUT /api/profile/update - Status: 200 - Duration: 12ms
+2024-12-11 21:14:34 [INFO]: Incoming PUT request to /api/profile/change-password
+2024-12-11 21:14:34 [INFO]: Response for PUT /api/profile/change-password - Status: 200 - Duration: 3ms
+2024-12-11 21:15:35 [INFO]: Incoming PUT request to /api/profile/change-password
+2024-12-11 21:15:35 [INFO]: Response for PUT /api/profile/change-password - Status: 200 - Duration: 13ms
+2024-12-11 21:16:05 [INFO]: Incoming PUT request to /api/profile/change-password
+2024-12-11 21:16:05 [INFO]: Response for PUT /api/profile/change-password - Status: 500 - Duration: 11ms
+2024-12-11 21:18:32 [INFO]: Incoming PUT request to /api/profile/change-password
+2024-12-11 21:18:32 [INFO]: Response for PUT /api/profile/change-password - Status: 500 - Duration: 12ms
