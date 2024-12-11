@@ -145,3 +145,29 @@
 2024-12-12 01:53:42 [INFO]: Response for POST /api/subjects/add - Status: 201 - Duration: 4ms
 2024-12-12 02:05:43 [INFO]: Incoming GET request to /api/subjects
 2024-12-12 02:05:43 [INFO]: Response for GET /api/subjects - Status: 200 - Duration: 23ms
+2024-12-12 02:17:54 [INFO]: Incoming GET request to /api/subjects
+2024-12-12 02:17:54 [INFO]: Response for GET /api/subjects - Status: 200 - Duration: 26ms
+2024-12-12 02:18:14 [INFO]: Incoming POST request to /api/calculate/sgpa
+2024-12-12 02:18:14 [INFO]: Response for POST /api/calculate/sgpa - Status: 500 - Duration: 2ms
+2024-12-12 02:19:10 [INFO]: Incoming POST request to /api/marks/add
+2024-12-12 02:19:10 [INFO]: Response for POST /api/marks/add - Status: 500 - Duration: 8ms
+2024-12-12 02:19:30 [INFO]: Incoming POST request to /api/marks/add
+2024-12-12 02:19:30 [INFO]: Response for POST /api/marks/add - Status: 500 - Duration: 3ms
+2024-12-12 02:20:03 [INFO]: Incoming POST request to /api/marks/add
+2024-12-12 02:20:03 [INFO]: Response for POST /api/marks/add - Status: 201 - Duration: 24ms
+2024-12-12 02:24:03 [INFO]: Incoming POST request to /api/marks/add
+2024-12-12 02:24:03 [INFO]: Response for POST /api/marks/add - Status: 201 - Duration: 5ms
+2024-12-12 02:24:11 [INFO]: Incoming POST request to /api/marks/add
+2024-12-12 02:24:11 [INFO]: Response for POST /api/marks/add - Status: 201 - Duration: 4ms
+2024-12-12 02:24:22 [INFO]: Incoming POST request to /api/marks/add
+2024-12-12 02:24:22 [INFO]: Response for POST /api/marks/add - Status: 201 - Duration: 3ms
+2024-12-12 02:24:30 [INFO]: Incoming POST request to /api/marks/add
+2024-12-12 02:24:30 [INFO]: Response for POST /api/marks/add - Status: 201 - Duration: 4ms
+2024-12-12 02:24:38 [INFO]: Incoming POST request to /api/marks/add
+2024-12-12 02:24:38 [INFO]: Response for POST /api/marks/add - Status: 201 - Duration: 3ms
+2024-12-12 02:24:48 [INFO]: Incoming POST request to /api/marks/add
+2024-12-12 02:24:48 [INFO]: Response for POST /api/marks/add - Status: 201 - Duration: 3ms
+2024-12-12 02:24:55 [INFO]: Incoming POST request to /api/marks/add
+2024-12-12 02:24:55 [INFO]: Response for POST /api/marks/add - Status: 201 - Duration: 3ms
+2024-12-12 02:26:13 [INFO]: Incoming POST request to /api/calculate/sgpa
+2024-12-12 02:26:13 [INFO]: Response for POST /api/calculate/sgpa - Status: 500 - Duration: 4ms

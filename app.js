@@ -7,6 +7,7 @@ const adminRouter = require('./routes/adminRoutes.js');
 const authRouter = require('./routes/authRoutes.js');
 const calculateRouter = require('./routes/sgpaRouter.js');
 const subjectRouter = require('./routes/subjectRouter.js');
+const marksRouter = require('./routes/marksRoutes.js');
 const requestLogger = require('./middlewares/requestLogger');
 
 const app = express();
@@ -21,6 +22,7 @@ app.use('/api/register', registrationRouter);
 app.use('/api/profile', profileRouter);
 app.use('/api/admin', adminRouter);
 app.use("/api/subjects", subjectRouter);
+app.use('/api/marks', marksRouter);
 app.use('/api/calculate', calculateRouter);
 
 module.exports = app;
