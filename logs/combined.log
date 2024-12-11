@@ -100,3 +100,46 @@
 2024-12-11 23:16:35 [INFO]: Response for PUT /api/profile/upload - Status: 500 - Duration: 27ms
 2024-12-11 23:17:10 [INFO]: Incoming PUT request to /api/profile/upload
 2024-12-11 23:17:19 [INFO]: Response for PUT /api/profile/upload - Status: 200 - Duration: 8495ms
+2024-12-12 01:42:49 [INFO]: Incoming POST request to /api/subjects/add
+2024-12-12 01:42:49 [INFO]: Response for POST /api/subjects/add - Status: 500 - Duration: 34ms
+2024-12-12 01:45:12 [INFO]: Incoming POST request to /api/subjects/add
+2024-12-12 01:45:41 [INFO]: Incoming POST request to /api/subjects/add
+2024-12-12 01:45:41 [INFO]: Response for POST /api/subjects/add - Status: 201 - Duration: 39ms
+2024-12-12 01:46:34 [INFO]: Incoming POST request to /api/subjects/add
+2024-12-12 01:46:34 [INFO]: Response for POST /api/subjects/add - Status: 201 - Duration: 7ms
+2024-12-12 01:47:27 [INFO]: Incoming POST request to /api/subjects/add
+2024-12-12 01:47:27 [INFO]: Response for POST /api/subjects/add - Status: 201 - Duration: 9ms
+2024-12-12 01:47:39 [INFO]: Incoming POST request to /api/subjects/add
+2024-12-12 01:47:39 [INFO]: Response for POST /api/subjects/add - Status: 201 - Duration: 6ms
+2024-12-12 01:47:53 [INFO]: Incoming POST request to /api/subjects/add
+2024-12-12 01:47:53 [INFO]: Response for POST /api/subjects/add - Status: 201 - Duration: 6ms
+2024-12-12 01:48:06 [INFO]: Incoming POST request to /api/subjects/add
+2024-12-12 01:48:06 [INFO]: Response for POST /api/subjects/add - Status: 201 - Duration: 5ms
+2024-12-12 01:48:17 [INFO]: Incoming POST request to /api/subjects/add
+2024-12-12 01:48:17 [INFO]: Response for POST /api/subjects/add - Status: 201 - Duration: 5ms
+2024-12-12 01:48:26 [INFO]: Incoming POST request to /api/subjects/add
+2024-12-12 01:48:26 [INFO]: Response for POST /api/subjects/add - Status: 400 - Duration: 1ms
+2024-12-12 01:50:16 [INFO]: Incoming POST request to /api/subjects/add
+2024-12-12 01:50:16 [INFO]: Response for POST /api/subjects/add - Status: 400 - Duration: 2ms
+2024-12-12 01:50:28 [INFO]: Incoming POST request to /api/subjects/add
+2024-12-12 01:50:28 [INFO]: Response for POST /api/subjects/add - Status: 400 - Duration: 1ms
+2024-12-12 01:51:03 [INFO]: Incoming POST request to /api/subjects/add
+2024-12-12 01:51:03 [INFO]: Response for POST /api/subjects/add - Status: 201 - Duration: 4ms
+2024-12-12 01:51:12 [INFO]: Incoming POST request to /api/subjects/add
+2024-12-12 01:51:12 [INFO]: Response for POST /api/subjects/add - Status: 201 - Duration: 6ms
+2024-12-12 01:51:22 [INFO]: Incoming POST request to /api/subjects/add
+2024-12-12 01:51:22 [INFO]: Response for POST /api/subjects/add - Status: 201 - Duration: 5ms
+2024-12-12 01:51:35 [INFO]: Incoming POST request to /api/subjects/add
+2024-12-12 01:51:35 [INFO]: Response for POST /api/subjects/add - Status: 201 - Duration: 4ms
+2024-12-12 01:51:45 [INFO]: Incoming POST request to /api/subjects/add
+2024-12-12 01:51:45 [INFO]: Response for POST /api/subjects/add - Status: 201 - Duration: 4ms
+2024-12-12 01:52:03 [INFO]: Incoming POST request to /api/subjects/add
+2024-12-12 01:52:03 [INFO]: Response for POST /api/subjects/add - Status: 201 - Duration: 4ms
+2024-12-12 01:52:23 [INFO]: Incoming POST request to /api/subjects/add
+2024-12-12 01:52:23 [INFO]: Response for POST /api/subjects/add - Status: 201 - Duration: 5ms
+2024-12-12 01:52:34 [INFO]: Incoming POST request to /api/subjects/add
+2024-12-12 01:52:34 [INFO]: Response for POST /api/subjects/add - Status: 400 - Duration: 2ms
+2024-12-12 01:53:06 [INFO]: Incoming POST request to /api/subjects/add
+2024-12-12 01:53:06 [INFO]: Response for POST /api/subjects/add - Status: 400 - Duration: 2ms
+2024-12-12 01:53:42 [INFO]: Incoming POST request to /api/subjects/add
+2024-12-12 01:53:42 [INFO]: Response for POST /api/subjects/add - Status: 201 - Duration: 4ms
