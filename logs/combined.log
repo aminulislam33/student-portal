@@ -1,0 +1,40 @@
+2024-12-11 16:26:05 [INFO]: Incoming GET request to /
+2024-12-11 16:26:05 [INFO]: Response for GET / - Status: 201 - Duration: 11ms
+2024-12-11 16:58:59 [INFO]: Incoming POST request to /api/register/student
+2024-12-11 16:58:59 [INFO]: Response for POST /api/register/student - Status: 500 - Duration: 124ms
+2024-12-11 17:00:22 [INFO]: Incoming POST request to /api/register/student
+2024-12-11 17:00:22 [INFO]: Response for POST /api/register/student - Status: 500 - Duration: 22ms
+2024-12-11 17:02:00 [INFO]: Incoming POST request to /api/register/student
+2024-12-11 17:02:00 [INFO]: Response for POST /api/register/student - Status: 500 - Duration: 27ms
+2024-12-11 17:03:40 [INFO]: Incoming POST request to /api/register/student
+2024-12-11 17:03:40 [INFO]: Response for POST /api/register/student - Status: 500 - Duration: 24ms
+2024-12-11 17:05:45 [INFO]: Incoming POST request to /api/register/student
+2024-12-11 17:05:45 [INFO]: Response for POST /api/register/student - Status: 500 - Duration: 18ms
+2024-12-11 17:09:14 [INFO]: Incoming POST request to /api/register/student
+2024-12-11 17:09:14 [INFO]: Response for POST /api/register/student - Status: 500 - Duration: 122ms
+2024-12-11 17:12:29 [INFO]: Incoming POST request to /api/register/student
+2024-12-11 17:12:30 [INFO]: Response for POST /api/register/student - Status: 500 - Duration: 147ms
+2024-12-11 17:13:58 [INFO]: Incoming POST request to /api/register/student
+2024-12-11 17:13:58 [INFO]: Response for POST /api/register/student - Status: 500 - Duration: 146ms
+2024-12-11 17:15:50 [INFO]: Incoming POST request to /api/register/student
+2024-12-11 17:15:50 [INFO]: Response for POST /api/register/student - Status: 500 - Duration: 144ms
+2024-12-11 17:19:40 [INFO]: Incoming POST request to /api/register/student
+2024-12-11 17:19:40 [INFO]: Response for POST /api/register/student - Status: 500 - Duration: 136ms
+2024-12-11 17:24:04 [INFO]: Incoming POST request to /api/register/student
+2024-12-11 17:24:04 [INFO]: Response for POST /api/register/student - Status: 500 - Duration: 135ms
+2024-12-11 17:27:14 [INFO]: Incoming POST request to /api/register/student
+2024-12-11 17:27:14 [INFO]: Response for POST /api/register/student - Status: 201 - Duration: 143ms
+2024-12-11 17:29:39 [INFO]: Incoming POST request to /api/register/student
+2024-12-11 17:29:39 [INFO]: Response for POST /api/register/student - Status: 201 - Duration: 118ms
+2024-12-11 17:33:09 [INFO]: Incoming POST request to /api/register/teacher
+2024-12-11 17:33:09 [INFO]: Response for POST /api/register/teacher - Status: 500 - Duration: 34ms
+2024-12-11 17:35:14 [INFO]: Incoming POST request to /api/register/teacher
+2024-12-11 17:35:14 [INFO]: Response for POST /api/register/teacher - Status: 500 - Duration: 142ms
+2024-12-11 17:35:33 [INFO]: Incoming POST request to /api/register/teacher
+2024-12-11 17:35:33 [INFO]: Response for POST /api/register/teacher - Status: 500 - Duration: 29ms
+2024-12-11 17:37:00 [INFO]: Incoming POST request to /api/register/teacher
+2024-12-11 17:37:00 [INFO]: Response for POST /api/register/teacher - Status: 500 - Duration: 19ms
+2024-12-11 17:37:51 [INFO]: Incoming POST request to /api/register/teacher
+2024-12-11 17:37:51 [INFO]: Response for POST /api/register/teacher - Status: 500 - Duration: 138ms
+2024-12-11 17:39:35 [INFO]: Incoming POST request to /api/register/teacher
+2024-12-11 17:39:35 [INFO]: Response for POST /api/register/teacher - Status: 201 - Duration: 144ms

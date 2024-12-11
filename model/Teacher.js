@@ -12,7 +12,7 @@ const teacherSchema = new mongoose.Schema({
     unique: true,
     required: true,
   },
-  post: {
+  designation: {
     type: String,
     required: true,
     enum: ["Assistant Professor", "Associate Professor", "Professor"]
@@ -24,4 +24,4 @@ const teacherSchema = new mongoose.Schema({
   },
 });
 
-module.exports = User.discriminator("Teacher", teacherSchema);
+module.exports = mongoose.model("Teacher", teacherSchema);

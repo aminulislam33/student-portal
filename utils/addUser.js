@@ -1,25 +1,25 @@
 const User = require("../model/User");
 
-const addUser = async (fullName, email, phone, photo, gender, password)=>{
+const addUser = async (fullName, email, phone, gender, password) => {
     try {
-        const existUser = await User.findOne({email});
-        if(existUser){
-            return res.status(400).json({message: "User email alrteady exist"});
+        const existUser = await User.findOne({ email });
+        if (existUser) {
+            throw new Error("User email already exists");
         }
 
         const newUser = new User({
             fullName,
             email,
             phone,
-            photo,
             gender,
-            password
+            password,
         });
-        
+
         await newUser.save();
-        return res.status(201).json({message: "User registered successfully", newUser});
+        return newUser;
     } catch (error) {
-        return res.status(500).json({message: "Failed to register user"});
+        console.error("Error in addUser: ", error.message);
+        throw error; 
     }
 };
 

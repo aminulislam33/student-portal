@@ -1,16 +1,19 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
-const authRouter = require('./routes/studentRoute');
-const userRouter = require('./routes/profileRoute');
+const profileRouter = require('./routes/profileRoute');
+const userRouter = require('./routes/userRoutes.js');
+const requestLogger = require('./middlewares/requestLogger');
 
 const app = express();
 dotenv.config();
 connectDB();
 
 app.use(express.json());
-app.use('/api/auth', authRouter);
-app.use('/api/user', userRouter);
+app.use(requestLogger);
+
+app.use('/api/register', userRouter)
+app.use('/api/user', profileRouter);
 
 app.get('/', (req,res)=>{
     return res.status(201).json({msg: "Hello from server"});
