@@ -22,6 +22,10 @@ const teacherSchema = new mongoose.Schema({
     required: true,
     enum: ["AE&AM", "CE", "CST", "EE", "ETC", "IT", "ME", "MET", "MN"]
   },
+  isHOD: {
+    type: Boolean,
+    default: false
+  }
 });
 
 module.exports = mongoose.model("Teacher", teacherSchema);
