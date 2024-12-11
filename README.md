@@ -1,198 +1,98 @@
-# Online MCQ-Based Exam System
-
-Welcome to the **Online MCQ-Based Exam System**! This platform allows administrators to create exams and manage users, while students can take exams in a structured and secure manner.
-
----
-
-## Table of Contents
-1. [Introduction](#introduction)
-2. [Features](#features)
-3. [Technologies Used](#technologies-used)
-4. [Installation](#installation)
-5. [Usage Guide](#usage-guide)
-6. [API Reference](#api-reference)
-7. [Project Structure](#project-structure)
-8. [Contributing](#contributing)
-9. [License](#license)
-
----
+# Student Portal Project
 
 ## Introduction
-
-The Online MCQ-Based Exam System is designed to provide an easy-to-use platform for conducting aptitude-based exams with single or multiple correct answers. It ensures secure login, token-based authentication, and time-bound exam management for students.
+The **Student Portal** is a comprehensive web application designed to simplify the management of student, teacher, and administrative information within a college. It centralizes essential details and provides features for seamless interaction between students, teachers, and the administration.
 
 ---
 
 ## Features
-- **User Roles:** Administrator and Student roles.
-- **Authentication:** Secure login and signup using JWT and bcrypt.
-- **Exam Management:**
-  - Create, update, and delete exams.
-  - Schedule exams with start and end times.
-- **Question Management:**
-  - Add single or multiple-correct MCQ questions.
-- **Exam Taking:**
-  - Fetch questions dynamically.
-  - Submit answers and calculate scores automatically.
-- **Responsive Design:** Mobile-friendly interface using Bootstrap/Tailwind.
+### General
+- **User Authentication**: Secure login and signup functionality for students, teachers, and administrators.
+- **Role-Based Access Control**: Differentiated access for students, teachers, and admins to ensure security and functionality segregation.
+
+### Student Features
+- **Profile Management**: View and update personal details such as name, phone, email, and photo.
+- **Academic Details**:
+  - Access to marksheets, attendance, and timetable.
+  - View program and department information.
+- **Fee Management**: Track and view fee payment status.
+
+### Teacher Features
+- **Profile Management**: View and update personal details.
+- **Student Management**:
+  - Upload attendance and grades.
+  - Generate and manage student performance reports.
+
+### Admin Features
+- **Centralized Data Management**:
+  - Manage students, teachers, and administrative users.
+  - Assign departments and roles.
+- **Reports and Analytics**:
+  - Generate college-wide academic reports.
+  - Track and manage fee payment data.
 
 ---
 
 ## Technologies Used
-
-### Backend
-- **Node.js** with **Express.js**
-- **MongoDB** with **Mongoose**
-- **JWT** for authentication
-- **bcrypt** for password hashing
-- **Docker** for containerization
-
-### Frontend
-- **React.js** with Context API for global state management
-- **React Router** for navigation
-- **Bootstrap/Tailwind CSS** for UI styling
+- **Frontend**: React.js (with Bootstrap/Tailwind for styling)
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB
+- **Authentication**: JWT (JSON Web Tokens)
+- **Containerization**: Docker (planned for backend deployment)
 
 ---
 
-## Installation
-
-### Prerequisites
-- **Node.js** (v16 or later)
-- **MongoDB** (local or cloud instance)
-- **Docker** (optional, for containerization)
-
-### Steps
-
-1. **Clone the Repository:**
+## Installation (Basic Setup)
+1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo/online-exam-system.git
-   cd online-exam-system
+   git clone https://github.com/yourusername/student-portal.git
+   cd student-portal
    ```
-
-2. **Backend Setup:**
+2. Install dependencies:
    ```bash
-   cd backend
    npm install
    ```
-
-   - Create a `.env` file in the `backend` directory:
-     ```
-     PORT=8000
-     MONGO_URI=mongodb://localhost:27017/exam-system
-     JWT_SECRET=your_jwt_secret
-     ```
-   
-   - Start the server:
-     ```bash
-     npm start
-     ```
-
-3. **Frontend Setup:**
+3. Run the backend server:
    ```bash
-   cd frontend
-   npm install
    npm start
    ```
-
-4. **Run with Docker (Optional):**
-   - Build and run containers:
-     ```bash
-     docker-compose up --build
-     ```
+4. Run the frontend (instructions will follow once implemented).
 
 ---
 
-## Usage Guide
-
-### Administrator
-1. **Login/Signup**: Navigate to `/admin/login` to access the admin dashboard.
-2. **Create Exams**: Schedule exams with start and end times.
-3. **Manage Questions**: Add MCQs for the exams.
-
-### Students
-1. **Login/Signup**: Use `/login` to access the student dashboard.
-2. **Take Exams**:
-   - Navigate to available exams.
-   - Start the exam (available only during the scheduled time).
-   - Submit answers within the time limit.
-3. **View Results**: Check scores after submission.
+## Features in Progress
+- Profile management for all roles.
+- Password reset functionality.
+- Integration of teacher and student-specific dashboards.
+- Role-based access and permissions.
 
 ---
 
-## API Reference
-
-### Authentication
-| Endpoint         | Method | Description             |
-|------------------|--------|-------------------------|
-| `/api/auth/signup` | POST   | Create a new user       |
-| `/api/auth/login`  | POST   | Login and get JWT token |
-
-### Exam Management (Admin)
-| Endpoint               | Method | Description                   |
-|------------------------|--------|-------------------------------|
-| `/api/exams`            | POST   | Create a new exam             |
-| `/api/exams/:id`        | GET    | Fetch details of an exam      |
-| `/api/exams/:id`        | PUT    | Update an existing exam       |
-| `/api/exams/:id`        | DELETE | Delete an exam                |
-
-### Question Management (Admin)
-| Endpoint                  | Method | Description                     |
-|---------------------------|--------|---------------------------------|
-| `/api/questions`          | POST   | Add questions to an exam        |
-| `/api/questions/:examId`  | GET    | Fetch all questions for an exam |
-
-### Exam Taking (Student)
-| Endpoint                 | Method | Description                       |
-|--------------------------|--------|-----------------------------------|
-| `/api/exam-taking/start` | POST   | Fetch questions for a given exam |
-| `/api/exam-taking/submit`| POST   | Submit answers and calculate score |
-
----
-
-## Project Structure
-
-```
-online-exam-system
-├── backend
-│   ├── controllers
-│   ├── models
-│   ├── routes
-│   ├── middlewares
-│   ├── utils
-│   └── app.js
-├── frontend
-│   ├── src
-│   │   ├── components
-│   │   ├── pages
-│   │   ├── context
-│   │   ├── services
-│   │   └── App.js
-├── docker-compose.yml
-└── README.md
-```
+## Future Enhancements
+- Email notifications for password reset and fee reminders.
+- Analytics dashboard for administrators.
+- Enhanced security measures (e.g., two-factor authentication).
 
 ---
 
 ## Contributing
-
-Contributions are welcome! Please follow these steps:
+We welcome contributions from everyone! Please follow these steps:
 1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-name`).
-3. Commit your changes (`git commit -m 'Add feature'`).
-4. Push to the branch (`git push origin feature-name`).
+2. Create a feature branch:
+   ```bash
+   git checkout -b feature-name
+   ```
+3. Commit your changes:
+   ```bash
+   git commit -m "Add feature-name"
+   ```
+4. Push to the branch:
+   ```bash
+   git push origin feature-name
+   ```
 5. Open a Pull Request.
 
 ---
 
 ## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
-
----
-
-## Contact
-
-For questions or feedback, feel free to contact:
-- **Project Supervisor:** Dr. Suvarun Dalapati
-- **Project Guide:** Mr. Debanjan Dhara
-- **Team:** [Your Team Members]
+This project is licensed under the MIT License.
