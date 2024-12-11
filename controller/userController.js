@@ -1,9 +1,8 @@
 const User = require("../model/User");
 
 const getProfile = async(req,res)=>{
-    const {email} = req.body;
     try {
-        const user = await User.findOne({email}).select('-password');
+        const user = await User.findById(req.userId).select('-password');
         if(!user){return res.status(404).json({message: "User not found"})};
 
         return res.status(201).json(user);
