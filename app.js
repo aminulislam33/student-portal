@@ -20,7 +20,7 @@ app.use('/api/auth', authRouter);
 app.use('/api/register', registrationRouter);
 app.use('/api/profile', profileRouter);
 app.use('/api/admin', adminRouter);
-app.use('/api/calculate', calculateRouter);
 app.use("/api/subjects", subjectRouter);
+app.use('/api/calculate', calculateRouter);
 
 module.exports = app;

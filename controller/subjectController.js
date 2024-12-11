@@ -30,6 +30,22 @@ const addSubject = async (req, res) => {
   }
 };
 
+const getAllSubjects = async (req,res)=>{
+  try {
+      const subjects = await Subject.find();
+  
+      if (subjects.length === 0) {
+        return res.status(404).json({ message: "No subjects found" });
+      }
+  
+      return res.status(200).json({ subjects });
+    } catch (error) {
+      console.error("Error fetching subjects:", error);
+      return res.status(500).json({ message: "Error fetching subjects", error: error.message });
+    }
+};
+
 module.exports = {
   addSubject,
+  getAllSubjects
 };
