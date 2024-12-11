@@ -38,3 +38,23 @@
 2024-12-11 17:37:51 [INFO]: Response for POST /api/register/teacher - Status: 500 - Duration: 138ms
 2024-12-11 17:39:35 [INFO]: Incoming POST request to /api/register/teacher
 2024-12-11 17:39:35 [INFO]: Response for POST /api/register/teacher - Status: 201 - Duration: 144ms
+2024-12-11 20:05:33 [INFO]: Incoming POST request to /api/admin/register/
+2024-12-11 20:05:33 [INFO]: Response for POST /api/admin/register/ - Status: 201 - Duration: 120ms
+2024-12-11 20:09:24 [INFO]: Incoming GET request to /api/admin/users
+2024-12-11 20:09:25 [INFO]: Response for GET /api/admin/users - Status: 403 - Duration: 7ms
+2024-12-11 20:29:02 [INFO]: Incoming POST request to /api/auth/login
+2024-12-11 20:29:02 [INFO]: Response for POST /api/auth/login - Status: 200 - Duration: 116ms
+2024-12-11 20:29:21 [INFO]: Incoming GET request to /api/admin/users
+2024-12-11 20:29:21 [INFO]: Response for GET /api/admin/users - Status: 403 - Duration: 4ms
+2024-12-11 20:30:34 [INFO]: Incoming GET request to /api/admin/users
+2024-12-11 20:30:34 [INFO]: Response for GET /api/admin/users - Status: 403 - Duration: 10ms
+2024-12-11 20:31:28 [INFO]: Incoming GET request to /api/admin/users
+2024-12-11 20:31:28 [INFO]: Response for GET /api/admin/users - Status: 403 - Duration: 10ms
+2024-12-11 20:34:54 [INFO]: Incoming GET request to /api/admin/users
+2024-12-11 20:34:54 [INFO]: Response for GET /api/admin/users - Status: 403 - Duration: 10ms
+2024-12-11 20:36:23 [INFO]: Incoming GET request to /api/admin/users
+2024-12-11 20:36:23 [INFO]: Response for GET /api/admin/users - Status: 403 - Duration: 15ms
+2024-12-11 20:37:13 [INFO]: Incoming GET request to /api/admin/users
+2024-12-11 20:37:13 [INFO]: Response for GET /api/admin/users - Status: 500 - Duration: 18ms
+2024-12-11 20:38:09 [INFO]: Incoming GET request to /api/admin/users
+2024-12-11 20:38:09 [INFO]: Response for GET /api/admin/users - Status: 200 - Duration: 39ms

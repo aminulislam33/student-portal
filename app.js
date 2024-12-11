@@ -1,8 +1,10 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
-const profileRouter = require('./routes/profileRoute');
-const userRouter = require('./routes/userRoutes.js');
+const registrationRouter = require('./routes/registrationRoutes.js');
+const profileRouter = require('./routes/profileRoutes.js');
+const adminRoutes = require('./routes/adminRoutes.js');
+const authRouter = require('./routes/authRoutes.js');
 const requestLogger = require('./middlewares/requestLogger');
 
 const app = express();
@@ -12,11 +14,9 @@ connectDB();
 app.use(express.json());
 app.use(requestLogger);
 
-app.use('/api/register', userRouter)
-app.use('/api/user', profileRouter);
-
-app.get('/', (req,res)=>{
-    return res.status(201).json({msg: "Hello from server"});
-});
+app.use('/api/auth', authRouter);
+app.use('/api/register', registrationRouter);
+app.use('/api/profile', profileRouter);
+app.use('/api/admin', adminRoutes);
 
 module.exports = app;
