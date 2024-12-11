@@ -1,4 +1,4 @@
-const User = require("../model/User");
+const User = require("../models/User");
 const addUser = require("../utils/addUser");
 
 const registerAdmin = async (req,res)=>{
