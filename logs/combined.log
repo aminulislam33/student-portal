@@ -339,3 +339,127 @@
 2024-12-12 17:56:03 [INFO]: Response for GET /api/departments - Status: 200 - Duration: 4ms
 2024-12-12 17:57:47 [INFO]: Incoming POST request to /api/courses/add
 2024-12-12 17:57:47 [INFO]: Response for POST /api/courses/add - Status: 201 - Duration: 4ms
+2024-12-12 18:28:16 [INFO]: Incoming POST request to /api/auth/login
+2024-12-12 18:28:16 [INFO]: Response for POST /api/auth/login - Status: 200 - Duration: 58ms
+2024-12-12 18:28:33 [INFO]: Incoming GET request to /api/profile
+2024-12-12 18:28:33 [INFO]: Response for GET /api/profile - Status: 201 - Duration: 4ms
+2024-12-12 18:28:53 [INFO]: Incoming GET request to /api/students/675ab2bcffd07bb0395c32f4
+2024-12-12 18:28:53 [INFO]: Response for GET /api/students/675ab2bcffd07bb0395c32f4 - Status: 200 - Duration: 6ms
+2024-12-12 18:30:18 [INFO]: Incoming GET request to /api/subjects
+2024-12-12 18:30:18 [INFO]: Response for GET /api/subjects - Status: 200 - Duration: 2ms
+2024-12-12 18:38:44 [INFO]: Incoming GET request to /api/students/675ab2bcffd07bb0395c32f4
+2024-12-12 18:38:44 [INFO]: Response for GET /api/students/675ab2bcffd07bb0395c32f4 - Status: 200 - Duration: 13ms
+2024-12-12 18:41:29 [INFO]: Incoming GET request to /api/students/675ab2bcffd07bb0395c32f4
+2024-12-12 18:41:29 [INFO]: Response for GET /api/students/675ab2bcffd07bb0395c32f4 - Status: 200 - Duration: 13ms
+2024-12-12 18:44:54 [INFO]: Incoming GET request to /api/students/675ab2bcffd07bb0395c32f4
+2024-12-12 18:44:54 [INFO]: Response for GET /api/students/675ab2bcffd07bb0395c32f4 - Status: 200 - Duration: 12ms
+2024-12-12 18:49:26 [INFO]: Incoming POST request to /api/register/student
+2024-12-12 18:49:26 [INFO]: Response for POST /api/register/student - Status: 400 - Duration: 9ms
+2024-12-12 18:49:47 [INFO]: Incoming POST request to /api/register/student
+2024-12-12 18:49:47 [INFO]: Response for POST /api/register/student - Status: 500 - Duration: 53ms
+2024-12-12 18:50:17 [INFO]: Incoming POST request to /api/register/student
+2024-12-12 18:50:17 [INFO]: Response for POST /api/register/student - Status: 400 - Duration: 2ms
+2024-12-12 18:50:25 [INFO]: Incoming POST request to /api/register/student
+2024-12-12 18:50:25 [INFO]: Response for POST /api/register/student - Status: 500 - Duration: 47ms
+2024-12-12 18:52:16 [INFO]: Incoming POST request to /api/register/student
+2024-12-12 18:52:16 [INFO]: Response for POST /api/register/student - Status: 500 - Duration: 61ms
+2024-12-12 18:55:34 [INFO]: Incoming GET request to /api/departments
+2024-12-12 18:55:34 [INFO]: Response for GET /api/departments - Status: 200 - Duration: 4ms
+2024-12-12 18:58:05 [INFO]: Incoming GET request to /api/subjects
+2024-12-12 18:58:05 [INFO]: Response for GET /api/subjects - Status: 200 - Duration: 3ms
+2024-12-12 19:01:49 [INFO]: Incoming GET request to /api/departments
+2024-12-12 19:01:49 [INFO]: Response for GET /api/departments - Status: 200 - Duration: 3ms
+2024-12-12 19:04:33 [INFO]: Incoming GET request to /api/subjects
+2024-12-12 19:04:33 [INFO]: Response for GET /api/subjects - Status: 200 - Duration: 3ms
+2024-12-12 19:13:08 [INFO]: Incoming GET request to /api/students
+2024-12-12 19:13:08 [INFO]: Response for GET /api/students - Status: 200 - Duration: 7ms
+2024-12-12 19:14:43 [INFO]: Incoming POST request to /api/register/student
+2024-12-12 19:14:43 [INFO]: Response for POST /api/register/student - Status: 400 - Duration: 9ms
+2024-12-12 19:21:32 [INFO]: Incoming POST request to /api/register/student
+2024-12-12 19:21:32 [INFO]: Response for POST /api/register/student - Status: 500 - Duration: 12ms
+2024-12-12 19:21:51 [INFO]: Incoming GET request to /api/departments
+2024-12-12 19:21:51 [INFO]: Response for GET /api/departments - Status: 200 - Duration: 4ms
+2024-12-12 19:23:03 [INFO]: Incoming POST request to /api/semesters/add
+2024-12-12 19:23:03 [INFO]: Response for POST /api/semesters/add - Status: 201 - Duration: 5ms
+2024-12-12 19:23:18 [INFO]: Incoming POST request to /api/register/student
+2024-12-12 19:23:18 [INFO]: Response for POST /api/register/student - Status: 201 - Duration: 3ms
+2024-12-12 19:28:31 [INFO]: Incoming GET request to /api/students/675ab2bcffd07bb0395c32f4
+2024-12-12 19:28:31 [INFO]: Response for GET /api/students/675ab2bcffd07bb0395c32f4 - Status: 404 - Duration: 2ms
+2024-12-12 19:28:39 [INFO]: Incoming GET request to /api/students
+2024-12-12 19:28:39 [INFO]: Response for GET /api/students - Status: 200 - Duration: 2ms
+2024-12-12 19:28:52 [INFO]: Incoming GET request to /api/students/675aeace6f0da928fbb5e673
+2024-12-12 19:28:52 [INFO]: Response for GET /api/students/675aeace6f0da928fbb5e673 - Status: 404 - Duration: 2ms
+2024-12-12 19:29:11 [INFO]: Incoming GET request to /api/students/675ae388e4fe726da7e85a04
+2024-12-12 19:29:11 [INFO]: Response for GET /api/students/675ae388e4fe726da7e85a04 - Status: 200 - Duration: 3ms
+2024-12-12 19:36:31 [INFO]: Incoming GET request to /api/students/675ae388e4fe726da7e85a04
+2024-12-12 19:36:31 [INFO]: Response for GET /api/students/675ae388e4fe726da7e85a04 - Status: 500 - Duration: 10ms
+2024-12-12 19:41:24 [INFO]: Incoming GET request to /api/students/675ae388e4fe726da7e85a04
+2024-12-12 19:41:24 [INFO]: Response for GET /api/students/675ae388e4fe726da7e85a04 - Status: 404 - Duration: 9ms
+2024-12-12 19:43:57 [INFO]: Incoming GET request to /api/students/675ae388e4fe726da7e85a04
+2024-12-12 19:43:57 [INFO]: Response for GET /api/students/675ae388e4fe726da7e85a04 - Status: 404 - Duration: 10ms
+2024-12-12 19:44:16 [INFO]: Incoming GET request to /api/students
+2024-12-12 19:44:16 [INFO]: Response for GET /api/students - Status: 200 - Duration: 4ms
+2024-12-12 19:44:28 [INFO]: Incoming GET request to /api/students/675aeace6f0da928fbb5e673
+2024-12-12 19:44:28 [INFO]: Response for GET /api/students/675aeace6f0da928fbb5e673 - Status: 200 - Duration: 13ms
+2024-12-12 19:46:57 [INFO]: Incoming GET request to /api/students/675aeace6f0da928fbb5e673
+2024-12-12 19:46:57 [INFO]: Response for GET /api/students/675aeace6f0da928fbb5e673 - Status: 500 - Duration: 13ms
+2024-12-12 19:49:19 [INFO]: Incoming GET request to /api/students/675aeace6f0da928fbb5e673
+2024-12-12 19:49:19 [INFO]: Response for GET /api/students/675aeace6f0da928fbb5e673 - Status: 500 - Duration: 13ms
+2024-12-12 19:49:31 [INFO]: Incoming GET request to /api/students/675aeace6f0da928fbb5e673
+2024-12-12 19:49:31 [INFO]: Response for GET /api/students/675aeace6f0da928fbb5e673 - Status: 500 - Duration: 14ms
+2024-12-12 19:50:34 [INFO]: Incoming GET request to /api/students/675aeace6f0da928fbb5e673
+2024-12-12 19:50:34 [INFO]: Response for GET /api/students/675aeace6f0da928fbb5e673 - Status: 200 - Duration: 21ms
+2024-12-12 20:19:41 [INFO]: Incoming POST request to /api/marks
+2024-12-12 20:19:41 [INFO]: Response for POST /api/marks - Status: 200 - Duration: 15ms
+2024-12-12 20:21:39 [INFO]: Incoming POST request to /api/marks
+2024-12-12 20:21:39 [INFO]: Response for POST /api/marks - Status: 200 - Duration: 4ms
+2024-12-12 20:23:49 [INFO]: Incoming POST request to /api/marks
+2024-12-12 20:23:49 [INFO]: Response for POST /api/marks - Status: 200 - Duration: 3ms
+2024-12-12 20:28:58 [INFO]: Incoming POST request to /api/marks
+2024-12-12 20:28:58 [INFO]: Response for POST /api/marks - Status: 404 - Duration: 18ms
+2024-12-12 20:29:04 [INFO]: Incoming POST request to /api/marks
+2024-12-12 20:29:04 [INFO]: Response for POST /api/marks - Status: 200 - Duration: 23ms
+2024-12-12 20:30:19 [INFO]: Incoming POST request to /api/marks
+2024-12-12 20:30:19 [INFO]: Response for POST /api/marks - Status: 200 - Duration: 19ms
+2024-12-12 20:30:44 [INFO]: Incoming POST request to /api/marks
+2024-12-12 20:30:44 [INFO]: Response for POST /api/marks - Status: 404 - Duration: 4ms
+2024-12-12 20:31:11 [INFO]: Incoming POST request to /api/marks
+2024-12-12 20:31:11 [INFO]: Response for POST /api/marks - Status: 404 - Duration: 3ms
+2024-12-12 20:31:21 [INFO]: Incoming POST request to /api/marks
+2024-12-12 20:31:21 [INFO]: Response for POST /api/marks - Status: 200 - Duration: 4ms
+2024-12-12 20:33:56 [INFO]: Incoming POST request to /api/marks
+2024-12-12 20:33:56 [INFO]: Response for POST /api/marks - Status: 200 - Duration: 3ms
+2024-12-12 20:38:28 [INFO]: Incoming GET request to /api/students/675aeace6f0da928fbb5e673
+2024-12-12 20:38:28 [INFO]: Response for GET /api/students/675aeace6f0da928fbb5e673 - Status: 200 - Duration: 20ms
+2024-12-12 20:39:13 [INFO]: Incoming GET request to /api/students/675aeace6f0da928fbb5e673
+2024-12-12 20:39:13 [INFO]: Response for GET /api/students/675aeace6f0da928fbb5e673 - Status: 200 - Duration: 31ms
+2024-12-12 20:39:26 [INFO]: Incoming GET request to /api/students/675aeace6f0da928fbb5e673
+2024-12-12 20:39:26 [INFO]: Response for GET /api/students/675aeace6f0da928fbb5e673 - Status: 200 - Duration: 38ms
+2024-12-12 20:39:36 [INFO]: Incoming GET request to /api/students/675aeace6f0da928fbb5e673
+2024-12-12 20:39:36 [INFO]: Response for GET /api/students/675aeace6f0da928fbb5e673 - Status: 200 - Duration: 44ms
+2024-12-12 21:17:32 [INFO]: Incoming GET request to /api/students/675aeace6f0da928fbb5e673
+2024-12-12 21:17:32 [INFO]: Response for GET /api/students/675aeace6f0da928fbb5e673 - Status: 200 - Duration: 32ms
+2024-12-12 21:18:23 [INFO]: Incoming GET request to /api/students/675aeace6f0da928fbb5e673
+2024-12-12 21:18:23 [INFO]: Response for GET /api/students/675aeace6f0da928fbb5e673 - Status: 200 - Duration: 33ms
+2024-12-12 21:19:16 [INFO]: Incoming GET request to /api/students/675aeace6f0da928fbb5e673
+2024-12-12 21:19:16 [INFO]: Response for GET /api/students/675aeace6f0da928fbb5e673 - Status: 500 - Duration: 37ms
+2024-12-12 21:19:31 [INFO]: Incoming GET request to /api/students/675aeace6f0da928fbb5e673
+2024-12-12 21:19:31 [INFO]: Response for GET /api/students/675aeace6f0da928fbb5e673 - Status: 200 - Duration: 40ms
+2024-12-12 21:20:08 [INFO]: Incoming GET request to /api/students/675aeace6f0da928fbb5e673
+2024-12-12 21:20:08 [INFO]: Response for GET /api/students/675aeace6f0da928fbb5e673 - Status: 200 - Duration: 42ms
+2024-12-12 21:20:26 [INFO]: Incoming GET request to /api/students/675aeace6f0da928fbb5e673
+2024-12-12 21:20:26 [INFO]: Response for GET /api/students/675aeace6f0da928fbb5e673 - Status: 200 - Duration: 48ms
+2024-12-12 21:22:21 [INFO]: Incoming GET request to /api/students/675aeace6f0da928fbb5e673
+2024-12-12 21:22:21 [INFO]: Response for GET /api/students/675aeace6f0da928fbb5e673 - Status: 200 - Duration: 37ms
+2024-12-12 21:23:01 [INFO]: Incoming GET request to /api/students/675aeace6f0da928fbb5e673
+2024-12-12 21:23:01 [INFO]: Response for GET /api/students/675aeace6f0da928fbb5e673 - Status: 200 - Duration: 53ms
+2024-12-12 21:23:49 [INFO]: Incoming GET request to /api/students/675aeace6f0da928fbb5e673
+2024-12-12 21:23:49 [INFO]: Response for GET /api/students/675aeace6f0da928fbb5e673 - Status: 200 - Duration: 48ms
+2024-12-12 21:24:37 [INFO]: Incoming GET request to /api/students/675aeace6f0da928fbb5e673
+2024-12-12 21:24:37 [INFO]: Response for GET /api/students/675aeace6f0da928fbb5e673 - Status: 200 - Duration: 48ms
+2024-12-12 21:25:29 [INFO]: Incoming GET request to /api/students/675aeace6f0da928fbb5e673
+2024-12-12 21:25:29 [INFO]: Response for GET /api/students/675aeace6f0da928fbb5e673 - Status: 200 - Duration: 47ms
+2024-12-12 21:29:00 [INFO]: Incoming GET request to /api/students/675aeace6f0da928fbb5e673
+2024-12-12 21:29:00 [INFO]: Response for GET /api/students/675aeace6f0da928fbb5e673 - Status: 200 - Duration: 66ms
+2024-12-12 21:33:10 [INFO]: Incoming POST request to /api/calculate/sgpa
+2024-12-12 21:33:11 [INFO]: Response for POST /api/calculate/sgpa - Status: 200 - Duration: 54ms

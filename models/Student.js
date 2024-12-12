@@ -7,7 +7,7 @@ const studentSchema = new mongoose.Schema({
         unique: true,
         required: true,
     },
-    studentID: {
+    EnrollmentId: {
         type: String,
         unique: true,
         required: true,
@@ -26,8 +26,9 @@ const studentSchema = new mongoose.Schema({
         required: true,
     },
     currentSemester: {
-        type: mongoose.Schema.Types.ObjectId
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Semester"
     },
-});
+}, {timestamps: true});
 
 module.exports = mongoose.model("Student", studentSchema);

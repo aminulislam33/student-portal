@@ -44,7 +44,30 @@ const updateMarks = async (req, res) => {
   }
 };
 
+const getAllMarks = async (req, res) => {
+  const { studentId, semester, subjectId } = req.body;
+
+  try {
+    const query = {};
+    if (studentId) query.studentId = studentId;
+    if (semester) query.semester = semester;
+    if (subjectId) query.subjectId = subjectId;
+
+    const allMarks = await Marks.find(query);
+
+    if (!allMarks || allMarks.length === 0) {
+      return res.status(404).json({ message: "Marks not found" });
+    }
+
+    return res.status(200).json({ message: "Marks fetched successfully", marks: allMarks });
+  } catch (error) {
+    console.error("Error fetching marks:", error);
+    return res.status(500).json({ message: "Server error", error: error.message });
+  }
+};
+
 module.exports = {
   addMarks,
-  updateMarks
+  updateMarks,
+  getAllMarks
 };

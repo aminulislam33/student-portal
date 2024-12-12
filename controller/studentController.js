@@ -1,20 +1,22 @@
 const Marks = require("../models/Marks");
 const Student = require("../models/Student");
 const addUser = require("../utils/addUser");
+const calculateSGPA = require("../utils/calculateSGPA");
 
 const addStudent = async (req, res) => {
-    const { fullName, email, phone, gender, password, studentID, program, yearOfAdmission, department } = req.body;
+    const { fullName, email, phone, gender, password, EnrollmentId, program, yearOfAdmission, department, currentSemester } = req.body;
 
     try {
         const user = await addUser(fullName, email, phone, gender, password);
-        console.log("User returned by utils: ", user);
+        const userId = user?._id || user;
 
         const newStudent = new Student({
-            DBid: user._id,
-            studentID,
+            DBid: userId,
+            EnrollmentId,
             program,
             yearOfAdmission,
             department,
+            currentSemester,
         });
 
         await newStudent.save();
@@ -31,33 +33,64 @@ const addStudent = async (req, res) => {
     }
 };
 
-const getStudentDetails = async (req, res) => {
-    const { studentId } = req.params;
-
+const getAllStudents = async (req,res)=>{
     try {
-        const student = await Student.findOne({ DBid: studentId });
-        if (!student) {
-            return res.status(404).json({ message: 'Student not found' });
-        }
+        const allstudents = await Student.find({});
+        if(!allstudents){return res.status(400).json({message: "Students not found"})};
 
-        const marks = await Marks.find({ studentId: studentId });
-        if(!marks){
-            return res.status(404).json({message: "Marks not found"})
-        };
-
-        const studentDetails = {
-            ...student.toObject(),
-            marks,
-        };
-
-        res.status(200).json(studentDetails);
+        return res.status(200).json({message: "Students fetch successful", students: allstudents});
     } catch (error) {
-        console.error('Error fetching student details:', error);
-        res.status(500).json({ message: 'An error occurred while fetching student details' });
+        console.error(error);
+        return res.status(500).json({message: "Server error", error: error.message});
     }
 };
 
+const getStudentDetails = async (req, res) => {
+    const { studentId } = req.params;
+  
+    try {
+      const student = await Student.findById(studentId)
+        .populate({
+          path: "DBid",
+          select: "fullName email phone gender photo role",
+        })
+        .populate("department", "name abbreviation")
+        .populate("currentSemester", "semesterNumber subjects");
+  
+      if (!student) {
+        return res.status(404).json({ message: "Student not found" });
+      }
+      
+      console.log("information: ",student.currentSemester.subjects)
+      const sgpa = await calculateSGPA(studentId, student.currentSemester.subjects);
+      console.log("SGPA: ", sgpa)
+
+      const studentDetails = {
+        fullName: student.DBid.fullName,
+        email: student.DBid.email,
+        phone: student.DBid.phone,
+        gender: student.DBid.gender,
+        photo: student.DBid.photo,
+        role: student.DBid.role,
+        enrollmentId: student.EnrollmentId,
+        program: student.program,
+        yearOfAdmission: student.yearOfAdmission,
+        department: student.department,
+        currentSemester: student.currentSemester,
+        SGPA: sgpa,
+      };
+  
+      return res.status(200).json(studentDetails);
+    } catch (error) {
+      console.error("Error fetching student details:", error);
+      return res
+        .status(500)
+        .json({ message: "An error occurred while fetching student details" });
+    }
+  };  
+
 module.exports = {
     addStudent,
+    getAllStudents,
     getStudentDetails
 };

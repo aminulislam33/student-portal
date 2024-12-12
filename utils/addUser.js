@@ -4,7 +4,7 @@ const addUser = async (fullName, email, phone, gender, password) => {
     try {
         const existUser = await User.findOne({ email });
         if (existUser) {
-            throw new Error("User email already exists");
+            return existUser._id;
         }
 
         const newUser = new User({
