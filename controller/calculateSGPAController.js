@@ -1,7 +1,8 @@
 const calculateSGPA = require("../utils/calculateSGPA");
 
 const calculateSGPAController = async (req, res) => {
-  const { studentId, semesterSubjects } = req.body;
+  const { studentId } = req.body;
+  const semesterSubjects = req.body;
 
   try {
     const sgpa = await calculateSGPA(studentId, semesterSubjects);

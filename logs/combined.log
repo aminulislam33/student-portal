@@ -171,3 +171,99 @@
 2024-12-12 02:24:55 [INFO]: Response for POST /api/marks/add - Status: 201 - Duration: 3ms
 2024-12-12 02:26:13 [INFO]: Incoming POST request to /api/calculate/sgpa
 2024-12-12 02:26:13 [INFO]: Response for POST /api/calculate/sgpa - Status: 500 - Duration: 4ms
+2024-12-12 10:18:17 [INFO]: Incoming POST request to /api/calculate/sgpa
+2024-12-12 10:18:17 [INFO]: Response for POST /api/calculate/sgpa - Status: 500 - Duration: 4ms
+2024-12-12 10:19:08 [INFO]: Incoming POST request to /api/calculate/sgpa
+2024-12-12 10:19:08 [INFO]: Response for POST /api/calculate/sgpa - Status: 500 - Duration: 4ms
+2024-12-12 10:19:57 [INFO]: Incoming POST request to /api/calculate/sgpa
+2024-12-12 10:19:57 [INFO]: Response for POST /api/calculate/sgpa - Status: 500 - Duration: 5ms
+2024-12-12 10:20:37 [INFO]: Incoming POST request to /api/calculate/sgpa
+2024-12-12 10:20:37 [INFO]: Response for POST /api/calculate/sgpa - Status: 500 - Duration: 12ms
+2024-12-12 10:21:47 [INFO]: Incoming POST request to /api/calculate/sgpa
+2024-12-12 10:21:47 [INFO]: Response for POST /api/calculate/sgpa - Status: 500 - Duration: 8ms
+2024-12-12 10:25:43 [INFO]: Incoming POST request to /api/calculate/sgpa
+2024-12-12 10:25:43 [INFO]: Response for POST /api/calculate/sgpa - Status: 200 - Duration: 29ms
+2024-12-12 10:28:22 [INFO]: Incoming POST request to /api/calculate/sgpa
+2024-12-12 10:28:22 [INFO]: Response for POST /api/calculate/sgpa - Status: 200 - Duration: 23ms
+2024-12-12 10:28:48 [INFO]: Incoming GET request to /api/subjects
+2024-12-12 10:28:48 [INFO]: Response for GET /api/subjects - Status: 200 - Duration: 5ms
+2024-12-12 10:34:51 [INFO]: Incoming POST request to /api/subjects/add
+2024-12-12 10:34:51 [INFO]: Response for POST /api/subjects/add - Status: 400 - Duration: 0ms
+2024-12-12 10:35:08 [INFO]: Incoming POST request to /api/subjects/add
+2024-12-12 10:35:08 [INFO]: Response for POST /api/subjects/add - Status: 400 - Duration: 1ms
+2024-12-12 10:35:19 [INFO]: Incoming POST request to /api/subjects/add
+2024-12-12 10:35:19 [INFO]: Response for POST /api/subjects/add - Status: 400 - Duration: 1ms
+2024-12-12 10:36:01 [INFO]: Incoming POST request to /api/subjects/add
+2024-12-12 10:36:01 [INFO]: Response for POST /api/subjects/add - Status: 201 - Duration: 18ms
+2024-12-12 10:36:16 [INFO]: Incoming GET request to /api/subjects
+2024-12-12 10:36:16 [INFO]: Response for GET /api/subjects - Status: 200 - Duration: 2ms
+2024-12-12 10:37:37 [INFO]: Incoming POST request to /api/marks/add
+2024-12-12 10:37:37 [INFO]: Response for POST /api/marks/add - Status: 201 - Duration: 4ms
+2024-12-12 10:38:10 [INFO]: Incoming POST request to /api/calculate/sgpa
+2024-12-12 10:38:10 [INFO]: Response for POST /api/calculate/sgpa - Status: 200 - Duration: 13ms
+2024-12-12 10:40:31 [INFO]: Incoming POST request to /api/calculate/sgpa
+2024-12-12 10:40:31 [INFO]: Response for POST /api/calculate/sgpa - Status: 200 - Duration: 24ms
+2024-12-12 10:42:32 [INFO]: Incoming POST request to /api/calculate/sgpa
+2024-12-12 10:42:32 [INFO]: Response for POST /api/calculate/sgpa - Status: 200 - Duration: 22ms
+2024-12-12 10:44:20 [INFO]: Incoming POST request to /api/calculate/sgpa
+2024-12-12 10:44:20 [INFO]: Response for POST /api/calculate/sgpa - Status: 200 - Duration: 23ms
+2024-12-12 10:58:55 [INFO]: Incoming POST request to /api/marks/add
+2024-12-12 10:58:55 [INFO]: Response for POST /api/marks/add - Status: 201 - Duration: 6ms
+2024-12-12 10:59:05 [INFO]: Incoming POST request to /api/marks/add
+2024-12-12 10:59:05 [INFO]: Response for POST /api/marks/add - Status: 201 - Duration: 2ms
+2024-12-12 10:59:18 [INFO]: Incoming POST request to /api/marks/add
+2024-12-12 10:59:18 [INFO]: Response for POST /api/marks/add - Status: 201 - Duration: 2ms
+2024-12-12 10:59:30 [INFO]: Incoming POST request to /api/marks/add
+2024-12-12 10:59:30 [INFO]: Response for POST /api/marks/add - Status: 201 - Duration: 2ms
+2024-12-12 10:59:55 [INFO]: Incoming POST request to /api/marks/add
+2024-12-12 10:59:55 [INFO]: Response for POST /api/marks/add - Status: 201 - Duration: 2ms
+2024-12-12 11:00:26 [INFO]: Incoming POST request to /api/marks/add
+2024-12-12 11:00:26 [INFO]: Response for POST /api/marks/add - Status: 201 - Duration: 3ms
+2024-12-12 11:00:37 [INFO]: Incoming POST request to /api/marks/add
+2024-12-12 11:00:37 [INFO]: Response for POST /api/marks/add - Status: 201 - Duration: 2ms
+2024-12-12 11:05:40 [INFO]: Incoming POST request to /api/marks/add
+2024-12-12 11:05:40 [INFO]: Response for POST /api/marks/add - Status: 500 - Duration: 2ms
+2024-12-12 11:07:18 [INFO]: Incoming POST request to /api/marks/add
+2024-12-12 11:07:18 [INFO]: Response for POST /api/marks/add - Status: 201 - Duration: 3ms
+2024-12-12 11:07:26 [INFO]: Incoming POST request to /api/marks/add
+2024-12-12 11:07:26 [INFO]: Response for POST /api/marks/add - Status: 201 - Duration: 2ms
+2024-12-12 11:07:33 [INFO]: Incoming POST request to /api/marks/add
+2024-12-12 11:07:33 [INFO]: Response for POST /api/marks/add - Status: 201 - Duration: 2ms
+2024-12-12 11:07:41 [INFO]: Incoming POST request to /api/marks/add
+2024-12-12 11:07:41 [INFO]: Response for POST /api/marks/add - Status: 201 - Duration: 2ms
+2024-12-12 11:07:46 [INFO]: Incoming POST request to /api/marks/add
+2024-12-12 11:07:46 [INFO]: Response for POST /api/marks/add - Status: 201 - Duration: 1ms
+2024-12-12 11:07:54 [INFO]: Incoming POST request to /api/marks/add
+2024-12-12 11:07:54 [INFO]: Response for POST /api/marks/add - Status: 201 - Duration: 2ms
+2024-12-12 11:08:06 [INFO]: Incoming POST request to /api/marks/add
+2024-12-12 11:08:06 [INFO]: Response for POST /api/marks/add - Status: 201 - Duration: 1ms
+2024-12-12 11:09:45 [INFO]: Incoming POST request to /api/marks/add
+2024-12-12 11:09:45 [INFO]: Response for POST /api/marks/add - Status: 201 - Duration: 1ms
+2024-12-12 11:10:00 [INFO]: Incoming POST request to /api/marks/add
+2024-12-12 11:10:00 [INFO]: Response for POST /api/marks/add - Status: 201 - Duration: 1ms
+2024-12-12 11:10:13 [INFO]: Incoming GET request to /api/subjects
+2024-12-12 11:10:13 [INFO]: Response for GET /api/subjects - Status: 200 - Duration: 2ms
+2024-12-12 11:12:12 [INFO]: Incoming POST request to /api/calculate/sgpa
+2024-12-12 11:12:12 [INFO]: Response for POST /api/calculate/sgpa - Status: 500 - Duration: 13ms
+2024-12-12 11:13:56 [INFO]: Incoming POST request to /api/calculate/sgpa
+2024-12-12 11:13:56 [INFO]: Response for POST /api/calculate/sgpa - Status: 500 - Duration: 23ms
+2024-12-12 11:17:14 [INFO]: Incoming GET request to /api/subjects
+2024-12-12 11:17:14 [INFO]: Response for GET /api/subjects - Status: 200 - Duration: 3ms
+2024-12-12 11:20:06 [INFO]: Incoming POST request to /api/marks/add
+2024-12-12 11:20:06 [INFO]: Response for POST /api/marks/add - Status: 201 - Duration: 11ms
+2024-12-12 11:20:37 [INFO]: Incoming POST request to /api/calculate/sgpa
+2024-12-12 11:20:37 [INFO]: Response for POST /api/calculate/sgpa - Status: 200 - Duration: 66ms
+2024-12-12 11:22:04 [INFO]: Incoming POST request to /api/calculate/sgpa
+2024-12-12 11:22:04 [INFO]: Response for POST /api/calculate/sgpa - Status: 200 - Duration: 52ms
+2024-12-12 11:31:25 [INFO]: Incoming GET request to /api/subjects
+2024-12-12 11:31:25 [INFO]: Response for GET /api/subjects - Status: 200 - Duration: 11ms
+2024-12-12 11:41:29 [INFO]: Incoming PUT request to /api/marks/update
+2024-12-12 11:41:29 [INFO]: Response for PUT /api/marks/update - Status: 200 - Duration: 13ms
+2024-12-12 11:43:19 [INFO]: Incoming PUT request to /api/marks/update
+2024-12-12 11:43:19 [INFO]: Response for PUT /api/marks/update - Status: 200 - Duration: 3ms
+2024-12-12 11:43:44 [INFO]: Incoming PUT request to /api/marks/update
+2024-12-12 11:43:44 [INFO]: Response for PUT /api/marks/update - Status: 200 - Duration: 4ms
+2024-12-12 11:44:00 [INFO]: Incoming POST request to /api/calculate/sgpa
+2024-12-12 11:44:00 [INFO]: Response for POST /api/calculate/sgpa - Status: 200 - Duration: 13ms
+2024-12-12 11:45:24 [INFO]: Incoming POST request to /api/calculate/sgpa
+2024-12-12 11:45:24 [INFO]: Response for POST /api/calculate/sgpa - Status: 200 - Duration: 25ms

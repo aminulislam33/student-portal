@@ -5,8 +5,7 @@ const calculateSGPA = async (studentId, semesterSubjects) => {
   let totalGradePoints = 0;
   let totalCredits = 0;
 
-  for (const subjectData of semesterSubjects) {
-    const { subjectId } = subjectData;
+  for (const subjectId of semesterSubjects.subjects) {
 
     const subject = await Subject.findById(subjectId);
     if (!subject) throw new Error(`Subject with id ${subjectId} not found`);
