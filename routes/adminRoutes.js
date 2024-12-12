@@ -5,7 +5,6 @@ const { registerAdmin, getAllUsers } = require('../controller/adminController');
 const router = express.Router();
 
 router.post('/register', registerAdmin);
-router.post('/login')
 
 router.use(verifyToken);
 router.use(isAdmin)

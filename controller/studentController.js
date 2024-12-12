@@ -1,3 +1,4 @@
+const Marks = require("../models/Marks");
 const Student = require("../models/Student");
 const addUser = require("../utils/addUser");
 
@@ -30,4 +31,33 @@ const addStudent = async (req, res) => {
     }
 };
 
-module.exports = addStudent;
+const getStudentDetails = async (req, res) => {
+    const { studentId } = req.params;
+
+    try {
+        const student = await Student.findOne({ DBid: studentId });
+        if (!student) {
+            return res.status(404).json({ message: 'Student not found' });
+        }
+
+        const marks = await Marks.find({ studentId: studentId });
+        if(!marks){
+            return res.status(404).json({message: "Marks not found"})
+        };
+
+        const studentDetails = {
+            ...student.toObject(),
+            marks,
+        };
+
+        res.status(200).json(studentDetails);
+    } catch (error) {
+        console.error('Error fetching student details:', error);
+        res.status(500).json({ message: 'An error occurred while fetching student details' });
+    }
+};
+
+module.exports = {
+    addStudent,
+    getStudentDetails
+};

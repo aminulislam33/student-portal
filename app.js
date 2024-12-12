@@ -8,6 +8,10 @@ const authRouter = require('./routes/authRoutes.js');
 const calculateRouter = require('./routes/sgpaRouter.js');
 const subjectRouter = require('./routes/subjectRouter.js');
 const marksRouter = require('./routes/marksRoutes.js');
+const studentsRouter = require('./routes/studentRoutes.js');
+const departmentRouter = require('./routes/Department/departmentRoutes.js');
+const courseRouter = require('./routes/Course/courseRoutes.js');
+const semesterRouter = require('./routes/Semester/semesterRoutes.js');
 const requestLogger = require('./middlewares/requestLogger');
 
 const app = express();
@@ -24,5 +28,9 @@ app.use('/api/admin', adminRouter);
 app.use("/api/subjects", subjectRouter);
 app.use('/api/marks', marksRouter);
 app.use('/api/calculate', calculateRouter);
+app.use('/api/students', studentsRouter);
+app.use('/api/departments', departmentRouter);
+app.use('/api/courses', courseRouter);
+app.use('/api/semesters', semesterRouter);
 
 module.exports = app;

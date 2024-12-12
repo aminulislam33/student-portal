@@ -1,6 +1,16 @@
 const mongoose = require("mongoose");
 
 const subjectSchema = new mongoose.Schema({
+  department: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Department",
+    required: true,
+  },
+  semester: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Semester",
+    required: true,
+  },
   subjectCode: {
     type: String,
     required: true,
@@ -20,7 +30,7 @@ const subjectSchema = new mongoose.Schema({
     },
   type: {
     type: String,
-    enum: ["theory", "lab"],
+    enum: ["theory", "lab", "other"],
     required: true
     },
 });
