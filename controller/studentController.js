@@ -11,7 +11,8 @@ const addStudent = async (req, res) => {
     const userId = user?._id || user;
 
     const userGet = await Student.findOne({ EnrollmentId: EnrollmentId });
-    if (!userGet) {
+    if (userGet) {return res.status(404).json({message: "Student already exist with the Enrollment ID"})};
+
       const newStudent = new Student({
         DBid: userId,
         EnrollmentId,
@@ -20,11 +21,6 @@ const addStudent = async (req, res) => {
         department,
         currentSemester,
       });
-    }
-    else{
-      return res.status(404).json({message:'USER NOT FOUND'});
-    }
-
 
     await newStudent.save();
 
