@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const User = require("./User");
 
 const teacherSchema = new mongoose.Schema({
-    DBid: {
+  DBid: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
     unique: true, 
@@ -18,9 +18,9 @@ const teacherSchema = new mongoose.Schema({
     enum: ["Assistant Professor", "Associate Professor", "Professor"]
   },
   department: {
-    type: String,
-    required: true,
-    enum: ["AE&AM", "CE", "CST", "EE", "ETC", "IT", "ME", "MET", "MN"]
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    unique: true,
   },
   isHOD: {
     type: Boolean,
