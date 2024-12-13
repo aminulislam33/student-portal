@@ -19,7 +19,19 @@ const isAdmin = async (req,res,next)=>{
     next();
 };
 
+const isProfessor = async (req,res,next)=>{
+    if (req.userRole !== 'professor') return res.status(403).json({ error: 'Professor access required' });
+    next();
+};
+
+const isHOD = async (req,res,next)=>{
+    if (req.userRole !== 'HOD') return res.status(403).json({ error: 'HOD access required' });
+    next();
+};
+
 module.exports = {
     verifyToken,
-    isAdmin
+    isAdmin,
+    isProfessor,
+    isHOD
 };

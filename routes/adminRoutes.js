@@ -6,7 +6,6 @@ const router = express.Router();
 
 router.post('/register', registerAdmin);
 
-router.use(verifyToken);
 router.use(isAdmin)
 
 router.get('/users', getAllUsers);

@@ -1,13 +1,14 @@
 const Marks = require("../models/Marks");
 
 const addMarks = async (req, res) => {
-  const { studentId, subjectId, semester, midSemMarks, endSemMarks, internalAssessment } = req.body;
+  const { studentId, subjectId, department, semester, midSemMarks, endSemMarks, internalAssessment } = req.body;
   
   try {
 
     const marksEntry = new Marks({
       studentId,
       subjectId,
+      department,
       semester,
       midSemMarks,
       endSemMarks,

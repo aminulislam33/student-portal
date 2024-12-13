@@ -6,6 +6,11 @@ const marksSchema = new mongoose.Schema({
     ref: "User",
     required: true,
   },
+  department: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Department",
+    required: true,
+  },
   subjectId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Subject",

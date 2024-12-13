@@ -6,10 +6,22 @@ const semesterSchema = new mongoose.Schema({
         required: true,
         unique: true
     },
+    year: {
+        type: Number,
+        required: true,
+    },
     department: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Department',
         required: true
+    },
+    startDate: {
+        type: Date,
+        required: true,
+    },
+    endDate: {
+        type: Date,
+        required: true,
     },
     subjects: [{
         type: mongoose.Schema.Types.ObjectId,

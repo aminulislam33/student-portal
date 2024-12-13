@@ -13,6 +13,7 @@ const departmentRouter = require('./routes/Department/departmentRoutes.js');
 const courseRouter = require('./routes/Course/courseRoutes.js');
 const semesterRouter = require('./routes/Semester/semesterRoutes.js');
 const requestLogger = require('./middlewares/requestLogger');
+const { verifyToken } = require('./middlewares/authMiddleware.js');
 
 const app = express();
 dotenv.config();
@@ -22,6 +23,7 @@ app.use(express.json());
 app.use(requestLogger);
 
 app.use('/api/auth', authRouter);
+app.use(verifyToken);
 app.use('/api/register', registrationRouter);
 app.use('/api/profile', profileRouter);
 app.use('/api/admin', adminRouter);
