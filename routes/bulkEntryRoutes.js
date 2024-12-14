@@ -1,6 +1,6 @@
 const express = require('express');
 const multer = require('multer');
-const { bulkEntryOfProfessors } = require('../controller/BulkEntry/professorsBulkEntryController');
+const { bulkEntryOfProfessors } = require('../controller/BulkEntry/facultiesBulkEntryController');
 const { bulkEntryOfSemesters } = require('../controller/BulkEntry/semestersBulkEntryController');
 const { bulkEntryOfSubjects } = require('../controller/BulkEntry/subjectsBulkEntryController');
 const { bulkEntryOfStudents } = require('../controller/BulkEntry/studentsBulkEntryController');

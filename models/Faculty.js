@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const teacherSchema = new mongoose.Schema({
+const facultySchema = new mongoose.Schema({
     DBid: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
@@ -26,4 +26,4 @@ const teacherSchema = new mongoose.Schema({
     },
 }, { timestamps: true });
 
-module.exports = mongoose.model("Teacher", teacherSchema);
+module.exports = mongoose.model("Faculty", facultySchema);

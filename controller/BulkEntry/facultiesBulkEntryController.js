@@ -1,6 +1,6 @@
 const xlsx = require('xlsx');
 const Department = require('../../models/Department');
-const Teacher = require('../../models/Teacher');
+const Faculty = require('../../models/Faculty');
 const addUser = require('../../utils/addUser');
 
 const bulkEntryOfProfessors = async (req, res) => {
@@ -27,7 +27,7 @@ const bulkEntryOfProfessors = async (req, res) => {
                 continue;
             };
 
-            const newProfessor = new Teacher({
+            const newProfessor = new Faculty({
                 DBid: userId,
                 employeeID,
                 designation,
