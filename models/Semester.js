@@ -4,7 +4,6 @@ const semesterSchema = new mongoose.Schema({
     semesterNumber: {
         type: Number,
         required: true,
-        unique: true
     },
     year: {
         type: Number,
@@ -13,7 +12,10 @@ const semesterSchema = new mongoose.Schema({
     department: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Department',
-        required: true
+    },
+    course: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Course',
     },
     startDate: {
         type: Date,
@@ -22,25 +24,29 @@ const semesterSchema = new mongoose.Schema({
     endDate: {
         type: Date,
         required: true,
+        validate: {
+            validator: function (v) {
+                return v > this.startDate;
+            },
+            message: "End date must be after the start date.",
+        },
     },
     subjects: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Subject'
+        ref: 'Subject',
     }],
     totalCredits: {
         type: Number,
-        default: 0
+        default: 0,
     },
     totalMarks: {
         type: Number,
-        default: 0 
+        default: 0,
     },
     students: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Student'
+        ref: 'Student',
     }],
-}, {timestamps: true});
+}, { timestamps: true });
 
-const Semester = mongoose.model('Semester', semesterSchema);
-
-module.exports = Semester;
+module.exports = mongoose.model('Semester', semesterSchema);

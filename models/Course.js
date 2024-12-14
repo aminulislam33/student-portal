@@ -13,17 +13,15 @@ const courseSchema = new mongoose.Schema({
     duration: {
         type: Number,
         required: true,
-        min: 1, // Minimum duration (in years)
+        min: 1,
     },
     totalCredits: {
         type: Number,
-        required: true,
     },
     departments: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Department",
-        required: true,
     }],
-}, {timestamps: true});
+}, { timestamps: true });
 
 module.exports = mongoose.model('Course', courseSchema);

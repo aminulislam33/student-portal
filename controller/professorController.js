@@ -1,11 +1,11 @@
-const Teacher = require("../models/Professor");
+const Teacher = require("../models/Teacher");
 const addUser = require("../utils/addUser");
 
 const addTeacher = async (req, res) => {
-  const { fullName, email, phone, gender, password, employeeID, designation, department } = req.body;
+  const { fullName, email, phone, gender, employeeID, designation, department } = req.body;
 
   try {
-    const newUser = await addUser(fullName, email, phone, gender, password);
+    const newUser = await addUser(fullName, email, phone, gender);
 
     const newTeacher = new Teacher({
       DBid: newUser._id,

@@ -1,38 +1,40 @@
 const mongoose = require("mongoose");
 
 const subjectSchema = new mongoose.Schema({
-  department: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Department",
-    required: true,
-  },
-  semester: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Semester",
-    required: true,
-  },
-  subjectCode: {
-    type: String,
-    required: true,
-    unique: true
+    course: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Course",
     },
-  subjectName: {
-    type: String,
-    required: true
+    department: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Department",
     },
-  fullMarks: {
-    type: Number,
-    required: true
+    semester: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Semester",
     },
-  credits: {
-    type: Number,
-    required: true
+    subjectCode: {
+        type: String,
+        required: true,
+        unique: true,
     },
-  type: {
-    type: String,
-    enum: ["theory", "lab", "other"],
-    required: true
+    subjectName: {
+        type: String,
+        required: true,
     },
-});
+    fullMarks: {
+        type: Number,
+        required: true,
+    },
+    credits: {
+        type: Number,
+        required: true,
+    },
+    type: {
+        type: String,
+        enum: ["theory", "lab", "other"],
+        required: true,
+    },
+}, { timestamps: true });
 
 module.exports = mongoose.model("Subject", subjectSchema);

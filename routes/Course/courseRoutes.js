@@ -3,7 +3,7 @@ const { addCourse, getAllCourses } = require('../../controller/Course/courseCont
 const { isAdmin } = require('../../middlewares/authMiddleware');
 const router = express.Router();
 
-router.use(isAdmin);
+// router.use(isAdmin);
 router.post('/add', addCourse);
 router.get('/', getAllCourses);
 

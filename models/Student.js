@@ -5,30 +5,34 @@ const studentSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
         unique: true,
-        required: true,
     },
     EnrollmentId: {
         type: String,
         unique: true,
         required: true,
     },
-    program: {
-        type: String,
-        required: true,
+    course: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Course",
     },
     yearOfAdmission: {
-        type: String,
+        type: Number,
         required: true,
     },
     department: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Department",
-        required: true,
     },
     currentSemester: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Semester"
+        ref: "Semester",
     },
-}, {timestamps: true});
+    otp: {
+        type: String,
+    },
+    otpExpires: {
+        type: Date,
+    },
+}, { timestamps: true });
 
 module.exports = mongoose.model("Student", studentSchema);

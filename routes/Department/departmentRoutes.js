@@ -3,7 +3,7 @@ const { addDepartment, getAllDepartments } = require('../../controller/Departmen
 const { isAdmin } = require('../../middlewares/authMiddleware');
 const router = express.Router();
 
-router.use(isAdmin);
+// router.use(isAdmin);
 router.post('/add', addDepartment);
 router.get('/', getAllDepartments);
 

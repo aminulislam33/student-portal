@@ -1,4 +1,5 @@
 const Course = require("../../models/Course");
+const Department = require("../../models/Department");
 
 const addCourse = async (req, res) => {
     const { name, type, duration, totalCredits, departments } = req.body;
@@ -9,15 +10,30 @@ const addCourse = async (req, res) => {
             return res.status(400).json({ message: "Course with this name already exists." });
         }
 
+        const departmentIds = [];
+        for (const abbreviation of departments) {
+            const department = await Department.findOne({ abbreviation });
+            if (!department) {
+                return res.status(404).json({ message: `Department with abbreviation '${abbreviation}' not found.` });
+            }
+            departmentIds.push(department._id);
+        }
+
         const newCourse = new Course({
             name,
             type,
             duration,
             totalCredits,
-            departments,
+            departments: departmentIds,
         });
 
         await newCourse.save();
+
+        for (const departmentId of departmentIds) {
+            await Department.findByIdAndUpdate(departmentId, {
+                $push: { courses: newCourse._id }
+            });
+        }
 
         res.status(201).json({ message: "Course added successfully!", course: newCourse });
     } catch (error) {

@@ -467,3 +467,89 @@
 2024-12-13 12:00:25 [INFO]: Response for GET /api/students/675aeace6f0da928fbb5e673 - Status: 200 - Duration: 93ms
 2024-12-13 12:02:07 [INFO]: Incoming POST request to /api/marks
 2024-12-13 12:02:07 [INFO]: Response for POST /api/marks - Status: 200 - Duration: 4ms
+2024-12-13 17:34:17 [INFO]: Incoming POST request to /api/students/bulk-entry
+2024-12-13 17:34:17 [INFO]: Response for POST /api/students/bulk-entry - Status: 403 - Duration: 11ms
+2024-12-13 17:34:44 [INFO]: Incoming POST request to /api/students/bulk-entry
+2024-12-13 17:34:44 [INFO]: Response for POST /api/students/bulk-entry - Status: 500 - Duration: 8ms
+2024-12-13 17:35:51 [INFO]: Incoming POST request to /api/students/bulk-entry
+2024-12-13 17:35:51 [INFO]: Response for POST /api/students/bulk-entry - Status: 500 - Duration: 12ms
+2024-12-13 17:47:59 [INFO]: Incoming POST request to /api/students/bulk-entry
+2024-12-13 17:47:59 [INFO]: Response for POST /api/students/bulk-entry - Status: 500 - Duration: 19ms
+2024-12-13 17:48:17 [INFO]: Incoming POST request to /api/students/bulk-entry
+2024-12-13 17:48:17 [INFO]: Response for POST /api/students/bulk-entry - Status: 201 - Duration: 50ms
+2024-12-13 23:10:03 [INFO]: Incoming GET request to /
+2024-12-13 23:10:03 [INFO]: Response for GET / - Status: 404 - Duration: 14ms
+2024-12-13 23:11:32 [INFO]: Incoming GET request to /api/students/
+2024-12-13 23:11:32 [INFO]: Response for GET /api/students/ - Status: 200 - Duration: 40ms
+2024-12-13 23:11:32 [INFO]: Incoming GET request to /favicon.ico
+2024-12-13 23:11:32 [INFO]: Response for GET /favicon.ico - Status: 404 - Duration: 8ms
+2024-12-13 23:11:56 [INFO]: Incoming GET request to /api/students/
+2024-12-13 23:11:56 [INFO]: Response for GET /api/students/ - Status: 304 - Duration: 8ms
+2024-12-13 23:11:56 [INFO]: Incoming GET request to /favicon.ico
+2024-12-13 23:11:56 [INFO]: Response for GET /favicon.ico - Status: 404 - Duration: 2ms
+2024-12-13 23:18:51 [INFO]: Incoming POST request to /api/students/bulk-entry
+2024-12-13 23:18:51 [INFO]: Response for POST /api/students/bulk-entry - Status: 201 - Duration: 55ms
+2024-12-14 01:33:33 [INFO]: Incoming POST request to /api/departments/add
+2024-12-14 01:33:33 [INFO]: Response for POST /api/departments/add - Status: 201 - Duration: 40ms
+2024-12-14 01:59:52 [INFO]: Incoming POST request to /api/courses/add
+2024-12-14 01:59:52 [INFO]: Response for POST /api/courses/add - Status: 403 - Duration: 7ms
+2024-12-14 02:00:14 [INFO]: Incoming POST request to /api/courses/add
+2024-12-14 02:00:14 [INFO]: Response for POST /api/courses/add - Status: 500 - Duration: 46ms
+2024-12-14 02:02:49 [INFO]: Incoming POST request to /api/courses/add
+2024-12-14 02:02:49 [INFO]: Response for POST /api/courses/add - Status: 201 - Duration: 40ms
+2024-12-14 02:03:42 [INFO]: Incoming POST request to /api/courses/add
+2024-12-14 02:03:42 [INFO]: Response for POST /api/courses/add - Status: 201 - Duration: 10ms
+2024-12-14 02:04:21 [INFO]: Incoming POST request to /api/courses/add
+2024-12-14 02:04:21 [INFO]: Response for POST /api/courses/add - Status: 201 - Duration: 11ms
+2024-12-14 02:25:05 [INFO]: Incoming GET request to /api/departments
+2024-12-14 02:25:05 [INFO]: Response for GET /api/departments - Status: 200 - Duration: 10ms
+2024-12-14 02:27:14 [INFO]: Incoming POST request to /api/departments/add
+2024-12-14 02:27:14 [INFO]: Response for POST /api/departments/add - Status: 201 - Duration: 7ms
+2024-12-14 02:27:22 [INFO]: Incoming POST request to /api/courses/add
+2024-12-14 02:27:22 [INFO]: Response for POST /api/courses/add - Status: 404 - Duration: 5ms
+2024-12-14 02:27:45 [INFO]: Incoming POST request to /api/courses/add
+2024-12-14 02:27:45 [INFO]: Response for POST /api/courses/add - Status: 404 - Duration: 7ms
+2024-12-14 02:28:54 [INFO]: Incoming POST request to /api/departments/add
+2024-12-14 02:28:54 [INFO]: Response for POST /api/departments/add - Status: 201 - Duration: 3ms
+2024-12-14 02:28:59 [INFO]: Incoming POST request to /api/courses/add
+2024-12-14 02:28:59 [INFO]: Response for POST /api/courses/add - Status: 201 - Duration: 18ms
+2024-12-14 02:29:08 [INFO]: Incoming GET request to /api/departments
+2024-12-14 02:29:08 [INFO]: Response for GET /api/departments - Status: 200 - Duration: 2ms
+2024-12-14 12:00:42 [INFO]: Incoming POST request to /api/departments/add
+2024-12-14 12:00:42 [INFO]: Response for POST /api/departments/add - Status: 400 - Duration: 33ms
+2024-12-14 12:00:53 [INFO]: Incoming GET request to /api/departments
+2024-12-14 12:00:53 [INFO]: Response for GET /api/departments - Status: 200 - Duration: 17ms
+2024-12-14 12:01:44 [INFO]: Incoming GET request to /api/courses
+2024-12-14 12:01:44 [INFO]: Response for GET /api/courses - Status: 200 - Duration: 6ms
+2024-12-14 12:02:17 [INFO]: Incoming POST request to /api/courses/add
+2024-12-14 12:02:17 [INFO]: Response for POST /api/courses/add - Status: 201 - Duration: 37ms
+2024-12-14 12:03:48 [INFO]: Incoming POST request to /api/courses/add
+2024-12-14 12:03:48 [INFO]: Response for POST /api/courses/add - Status: 201 - Duration: 71ms
+2024-12-14 12:05:23 [INFO]: Incoming POST request to /api/courses/add
+2024-12-14 12:05:23 [INFO]: Response for POST /api/courses/add - Status: 404 - Duration: 9ms
+2024-12-14 12:05:32 [INFO]: Incoming GET request to /api/departments
+2024-12-14 12:05:32 [INFO]: Response for GET /api/departments - Status: 200 - Duration: 7ms
+2024-12-14 12:05:43 [INFO]: Incoming POST request to /api/courses/add
+2024-12-14 12:05:43 [INFO]: Response for POST /api/courses/add - Status: 201 - Duration: 21ms
+2024-12-14 12:07:16 [INFO]: Incoming POST request to /api/courses/add
+2024-12-14 12:07:16 [INFO]: Response for POST /api/courses/add - Status: 201 - Duration: 64ms
+2024-12-14 12:08:07 [INFO]: Incoming GET request to /api/courses
+2024-12-14 12:08:07 [INFO]: Response for GET /api/courses - Status: 200 - Duration: 6ms
+2024-12-14 12:08:28 [INFO]: Incoming GET request to /api/departments
+2024-12-14 12:08:28 [INFO]: Response for GET /api/departments - Status: 200 - Duration: 6ms
+2024-12-14 12:34:28 [INFO]: Incoming POST request to /api/bulkentry/professors
+2024-12-14 12:34:28 [INFO]: Response for POST /api/bulkentry/professors - Status: 500 - Duration: 79ms
+2024-12-14 12:35:02 [INFO]: Incoming POST request to /api/bulkentry/professors
+2024-12-14 12:35:02 [INFO]: Response for POST /api/bulkentry/professors - Status: 500 - Duration: 89ms
+2024-12-14 12:36:32 [INFO]: Incoming POST request to /api/bulkentry/professors
+2024-12-14 12:36:32 [INFO]: Response for POST /api/bulkentry/professors - Status: 500 - Duration: 47ms
+2024-12-14 12:37:02 [INFO]: Incoming POST request to /api/bulkentry/professors
+2024-12-14 12:37:02 [INFO]: Response for POST /api/bulkentry/professors - Status: 500 - Duration: 77ms
+2024-12-14 12:39:14 [INFO]: Incoming POST request to /api/bulkentry/professors
+2024-12-14 12:39:14 [INFO]: Response for POST /api/bulkentry/professors - Status: 201 - Duration: 64ms
+2024-12-14 13:32:53 [INFO]: Incoming POST request to /api/bulkentry/semesters
+2024-12-14 13:32:53 [INFO]: Response for POST /api/bulkentry/semesters - Status: 500 - Duration: 38ms
+2024-12-14 13:34:23 [INFO]: Incoming POST request to /api/bulkentry/semesters
+2024-12-14 13:34:23 [INFO]: Response for POST /api/bulkentry/semesters - Status: 500 - Duration: 12ms
+2024-12-14 13:40:15 [INFO]: Incoming POST request to /api/bulkentry/semesters
+2024-12-14 13:40:15 [INFO]: Response for POST /api/bulkentry/semesters - Status: 500 - Duration: 10ms

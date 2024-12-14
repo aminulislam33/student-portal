@@ -1,6 +1,6 @@
 const User = require("../models/User");
 
-const addUser = async (fullName, email, phone, gender, password) => {
+const addUser = async (fullName, email, gender) => {
     try {
         const existUser = await User.findOne({ email });
         if (existUser) {
@@ -10,9 +10,7 @@ const addUser = async (fullName, email, phone, gender, password) => {
         const newUser = new User({
             fullName,
             email,
-            phone,
             gender,
-            password,
         });
 
         await newUser.save();
