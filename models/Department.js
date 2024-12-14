@@ -13,6 +13,10 @@ const departmentSchema = new mongoose.Schema({
     description: {
         type: String
     },
+    faculty: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Teacher",
+    },
     head: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "Teacher",
