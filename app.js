@@ -24,6 +24,7 @@ connectDB();
 app.use(express.json());
 app.use(requestLogger);
 
+app.get('/', (req,res)=>{return res.status(200).json({message: "Hello from server"})});
 app.use('/api/auth', authRouter);
 app.use(verifyToken);
 app.use('/api/register', registrationRouter);

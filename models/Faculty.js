@@ -28,6 +28,12 @@ const facultySchema = new mongoose.Schema({
         type: Boolean,
         default: false,
     },
+    otp: {
+        type: String
+    },
+    otpExpires: {
+        type: Date
+    }
 }, { timestamps: true });
 
 module.exports = mongoose.model("Faculty", facultySchema);

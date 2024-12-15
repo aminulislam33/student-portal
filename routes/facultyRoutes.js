@@ -1,6 +1,10 @@
 const express = require('express');
-const { addFaculty, getAllFaculties, getFacultyById, updateFaculty, deleteFaculty } = require('../controller/facultyController');
+const { addFaculty, getAllFaculties, getFacultyById, updateFaculty, deleteFaculty, verifyOtp, createPassword, initiateAccountSetup } = require('../controller/facultyController');
 const router = express.Router();
+
+router.post('/initiate', initiateAccountSetup);
+router.post('/verify', verifyOtp);
+router.post('/password', createPassword);
 
 router.post('/add', addFaculty);
 router.get('/', getAllFaculties);

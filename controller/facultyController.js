@@ -1,6 +1,8 @@
+const nodemailer = require('nodemailer');
 const Department = require("../models/Department");
 const Faculty = require("../models/Faculty");
 const addUser = require("../utils/addUser");
+const generateOTP = require("../utils/otpGenerator");
 
 const addFaculty = async (req, res) => {
   const { fullName, email, phone, gender, employeeID, designation, department, joiningYear } = req.body;
@@ -154,10 +156,94 @@ const getAllFaculties = async (req, res) => {
   }
 };
 
+const initiateAccountSetup = async (req, res) => {
+  const { employeeID } = req.body;
+
+  try {
+      const faculty = await Faculty.findOne({ employeeID }).populate("DBid", "email");
+      if (!faculty) {
+          return res.status(404).json({ message: 'Faculty not found' });
+      }
+
+      const otp = generateOTP();
+      faculty.otp = otp;
+      faculty.otpExpires = Date.now() + 15 * 60 * 1000; // OTP expires in 15 minutes
+      await faculty.save();
+
+      const transporter = nodemailer.createTransport({
+          service: 'Gmail',
+          auth: {
+              user: process.env.EMAIL_USER,
+              pass: process.env.EMAIL_PASS,
+          },
+      });
+
+      await transporter.sendMail({
+          from: process.env.EMAIL_USER,
+          to: faculty.DBid.email,
+          subject: 'OTP for Account Setup',
+          text: `Your OTP is: ${otp}`,
+      });
+
+      res.status(200).json({ message: 'OTP sent to your institute email.' });
+  } catch (error) {
+      console.error('Error sending OTP:', error);
+      res.status(500).json({ message: 'Error sending OTP' });
+  }
+};
+
+const verifyOtp = async (req, res) => {
+  const { employeeID, otp } = req.body;
+
+  try {
+      const faculty = await Faculty.findOne({ employeeID });
+
+      if (!faculty || faculty.otpExpires < Date.now()) {
+          return res.status(400).json({ message: 'Invalid or expired OTP' });
+      }
+
+      if (faculty.otp !== otp) {
+          return res.status(400).json({ message: 'Incorrect OTP' });
+      }
+
+      res.status(200).json({message: 'OTP verified successfully'});
+  } catch (error) {
+      console.error('Error verifying OTP:', error);
+      res.status(500).json({ message: 'Error verifying OTP' });
+  }
+};
+
+const createPassword = async (req, res) => {
+    const { employeeID, password } = req.body;
+
+    try {
+        const faculty = await Faculty.findOne({ employeeID }).populate("DBid", "password");
+        if (!faculty) {
+            return res.status(404).json({ message: 'Faculty not found' });
+        }
+
+        faculty.DBid.password = password;
+        await faculty.DBid.save();
+
+        faculty.otp = undefined;
+        faculty.otpExpires = undefined;
+
+        await faculty.save();
+
+        res.status(200).json({ message: 'Password created successfully!' });
+    } catch (error) {
+        console.error('Error creating password:', error);
+        res.status(500).json({ message: 'Error creating password' });
+    }
+};
+
 module.exports = {
   addFaculty,
   updateFaculty,
   deleteFaculty,
   getFacultyById,
-  getAllFaculties
+  getAllFaculties,
+  initiateAccountSetup,
+  verifyOtp,
+  createPassword,
 };
