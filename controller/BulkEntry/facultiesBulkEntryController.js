@@ -11,8 +11,8 @@ const bulkEntryOfProfessors = async (req, res) => {
         const sheet = workbook.Sheets[workbook.SheetNames[0]];
         const data = xlsx.utils.sheet_to_json(sheet);
 
-        for (const professor of data) {
-            const {fullName, email, gender, employeeID, designation, department} = professor;
+        for (const faculty of data) {
+            const {fullName, email, gender, employeeID, designation, department, joiningYear} = faculty;
 
             const user = await addUser(fullName, email, gender);
             if(!user){
@@ -27,14 +27,33 @@ const bulkEntryOfProfessors = async (req, res) => {
                 continue;
             };
 
-            const newProfessor = new Faculty({
+            const newFaculty = new Faculty({
                 DBid: userId,
                 employeeID,
                 designation,
                 department: departmentDetails._id,
+                joiningYear,
               });
         
-            await newProfessor.save();
+            await newFaculty.save();
+
+            if (department) {
+                try {
+                  const getDepartment = await Department.findOne({ abbreviation: department });
+              
+                  if (!getDepartment) {
+                    console.error(`Department with abbreviation '${department}' not found.`);
+                    return res.status(404).json({ message: `Department with abbreviation '${department}' not found.` });
+                  }
+              
+                  getDepartment.faculties.addToSet(newFaculty._id);
+              
+                  await getDepartment.save();
+                } catch (error) {
+                  console.error('Error adding faculty to department:', error);
+                  return res.status(500).json({ message: 'Error adding faculty to department' });
+                }
+              }
         }
 
         res.status(201).json({ message: 'Bulk entry successful!' });

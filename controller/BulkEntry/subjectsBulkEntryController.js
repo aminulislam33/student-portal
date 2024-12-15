@@ -46,7 +46,7 @@ const bulkEntryOfSubjects = async (req, res) => {
                 continue;
             };
 
-            const newSemester = new Subject({
+            const newSubject = new Subject({
                 course: courseDetails._id,
                 department: departmentDetails._id,
                 semester: semesterDetails._id,
@@ -57,7 +57,10 @@ const bulkEntryOfSubjects = async (req, res) => {
                 type,
             });
         
-            await newSemester.save();
+            await newSubject.save();
+
+            semesterDetails.subjects.addToSet(newSubject._id);
+            await semesterDetails.save();
         }
 
         res.status(201).json({ message: 'Bulk entry successful!' });

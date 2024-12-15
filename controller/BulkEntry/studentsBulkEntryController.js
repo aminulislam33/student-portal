@@ -62,6 +62,9 @@ const bulkEntryOfStudents = async (req, res) => {
               });
         
             await newStudent.save();
+            
+            semesterDetails.students.addToSet(newStudent._id);
+            await semesterDetails.save();
         }
 
         res.status(201).json({ message: 'Bulk entry successful!' });

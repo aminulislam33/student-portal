@@ -28,7 +28,11 @@ const addMarks = async (req, res) => {
       return res.status(404).json({message: `Department ${department} not found`});
     }
     
-    const semesterDetails = await Semester.findOne({semesterNumber: semester});
+    const semesterDetails = await Semester.findOne({
+      course: courseDetails._id,
+      department: departmentDetails._id,
+      semesterNumber: semester,
+    });
     if(!semesterDetails){
       return res.status(404).json({message: `Semester ${semester} not found`});
     }

@@ -39,8 +39,9 @@ const bulkEntryOfMarks = async (req, res) => {
             };
 
             const semesterDetails = await Semester.findOne({
-                semesterNumber: semester,
+                course: courseDetails._id,
                 department: departmentDetails._id,
+                semesterNumber: semester,
             });
             if (!semesterDetails) {
                 console.warn(
