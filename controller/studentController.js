@@ -2,6 +2,7 @@ const Course = require("../models/Course");
 const Department = require("../models/Department");
 const Semester = require("../models/Semester");
 const Student = require("../models/Student");
+const User = require("../models/User");
 const addUser = require("../utils/addUser");
 const generateOTP = require("../utils/otpGenerator");
 
@@ -105,6 +106,18 @@ const updateStudent = async (req, res) => {
       }
     }
 
+    let semesterDetails;
+    if(currentSemester){
+      semesterDetails = await Semester.findOne({
+      semesterNumber: currentSemester,
+        department: departmentDoc._id,
+        course: courseDetails._id,
+    });
+    if(!semesterDetails){
+      return res.status(404).json({ message: `Semester '${currentSemester}' not found` });
+    }
+  }
+
     const updatedFields = {
       ...(fullName && { fullName }),
       ...(email && { email }),
@@ -114,7 +127,7 @@ const updateStudent = async (req, res) => {
       ...(course && { course: courseDetails._id }),
       ...(yearOfAdmission && { yearOfAdmission }),
       ...(department && { department: departmentDoc._id }),
-      ...(currentSemester && { currentSemester }),
+      ...(currentSemester && { currentSemester: semesterDetails._id }),
     };
 
     const updatedStudent = await Student.findByIdAndUpdate(
@@ -123,27 +136,19 @@ const updateStudent = async (req, res) => {
       { new: true }
     );
 
-    if (department && department !== student.department) {
-      await Department.updateMany(
-        { students: id },
-        { $pull: { students: id } }
-      );
-      const newDept = await Department.findOne({ abbreviation: department });
-      newDept.students.addToSet(id);
-      await newDept.save();
-    }
+    const updatedUser = await User.findByIdAndUpdate(
+      updatedStudent.DBid,
+      updatedFields,
+      {new: true}
+    );
 
     if (currentSemester && currentSemester !== student.currentSemester) {
       await Semester.updateMany(
         { students: id },
         { $pull: { students: id } }
       );
-      const newSemester = await Semester.findOne({
-        semesterNumber: currentSemester,
-        department,
-      });
-      newSemester.students.addToSet(id);
-      await newSemester.save();
+      semesterDetails.students.addToSet(id);
+      await semesterDetails.save();
     }
 
     return res.status(200).json({ message: "Student updated successfully", student: updatedStudent });
@@ -161,11 +166,6 @@ const deleteStudent = async (req, res) => {
     if (!student) {
       return res.status(404).json({ message: "Student not found" });
     }
-
-    await Department.updateMany(
-      { students: id },
-      { $pull: { students: id } }
-    );
 
     await Semester.updateMany(
       { students: id },
@@ -263,7 +263,14 @@ const createPassword = async (req, res) => {
 
 const getAllStudents = async (req, res) => {
   try {
-    const allstudents = await Student.find({});
+    const allstudents = await Student.find({})
+    .populate({
+      path: "DBid",
+      select: "fullName email phone gender photo",
+    })
+    .populate("course", "name")
+    .populate("department", "name")
+    .populate("currentSemester", "semesterNumber")
     if (!allstudents) { return res.status(400).json({ message: "Students not found" }) };
 
     return res.status(200).json({ message: "Students fetch successful", students: allstudents });
@@ -280,7 +287,7 @@ const getStudentDetails = async (req, res) => {
     const student = await Student.findById(studentId)
       .populate({
         path: "DBid",
-        select: "fullName email phone gender photo role",
+        select: "fullName email phone gender photo",
       })
       .populate("department", "name abbreviation")
       .populate("currentSemester", "semesterNumber");

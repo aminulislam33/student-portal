@@ -1,15 +1,54 @@
+const Course = require("../models/Course");
+const Department = require("../models/Department");
 const Marks = require("../models/Marks");
+const Semester = require("../models/Semester");
+const Student = require("../models/Student");
+const Subject = require("../models/Subject");
 
 const addMarks = async (req, res) => {
-  const { studentId, subjectId, department, semester, midSemMarks, endSemMarks, internalAssessment } = req.body;
+  const {
+    course,
+    department,
+    EnrollmentId,
+    subjectCode,
+    semester,
+    midSemMarks,
+    endSemMarks,
+    internalAssessment
+  } = req.body;
   
   try {
+    const courseDetails = await Course.findOne({name: course});
+    if(!courseDetails){
+      return res.status(404).json({message: `Course ${course} not found`});
+    }
+    
+    const departmentDetails = await Department.findOne({abbreviation: department});
+    if(!departmentDetails){
+      return res.status(404).json({message: `Department ${department} not found`});
+    }
+    
+    const semesterDetails = await Semester.findOne({semesterNumber: semester});
+    if(!semesterDetails){
+      return res.status(404).json({message: `Semester ${semester} not found`});
+    }
+    
+    const studentDetails = await Student.findOne({EnrollmentId});
+    if(!studentDetails){
+      return res.status(404).json({message: `Student ${EnrollmentId} not found`});
+    }
+    
+    const subjectDetails = await Subject.findOne({subjectCode});
+    if(!subjectDetails){
+      return res.status(404).json({message: `Subject ${subjectCode} not found`});
+    }
 
     const marksEntry = new Marks({
-      studentId,
-      subjectId,
-      department,
-      semester,
+      course: courseDetails._id,
+      department: departmentDetails._id,
+      studentId: studentDetails._id,
+      subjectId: subjectDetails._id,
+      semester: semesterDetails._id,
       midSemMarks,
       endSemMarks,
       internalAssessment,
@@ -24,19 +63,61 @@ const addMarks = async (req, res) => {
 };
 
 const updateMarks = async (req, res) => {
-  const { studentId, subjectId, semester, midSemMarks, endSemMarks, internalAssessment } = req.body;
+  const {
+    course,
+    department,
+    EnrollmentId,
+    subjectCode,
+    semester,
+    midSemMarks,
+    endSemMarks,
+    internalAssessment
+  } = req.body;
 
   try {
-    const existMarks = await Marks.findOne({ studentId, subjectId, semester });
-    if (!existMarks) {
-      return res.status(400).json({ message: `No marks found for this student ${studentId} and subject ${subjectId}` });
+    const courseDetails = await Course.findOne({name: course});
+    if(!courseDetails){
+      return res.status(404).json({message: `Course ${course} not found`});
+    }
+    
+    const departmentDetails = await Department.findOne({abbreviation: department});
+    if(!departmentDetails){
+      return res.status(404).json({message: `Department ${department} not found`});
+    }
+    
+    const semesterDetails = await Semester.findOne({semesterNumber: semester});
+    if(!semesterDetails){
+      return res.status(404).json({message: `Semester ${semester} not found`});
+    }
+    
+    const studentDetails = await Student.findOne({EnrollmentId});
+    if(!studentDetails){
+      return res.status(404).json({message: `Student ${EnrollmentId} not found`});
+    }
+    
+    const subjectDetails = await Subject.findOne({subjectCode});
+    if(!subjectDetails){
+      return res.status(404).json({message: `Subject ${subjectCode} not found`});
     }
 
-    existMarks.midSemMarks = midSemMarks ?? existMarks.midSemMarks;
-    existMarks.endSemMarks = endSemMarks ?? existMarks.endSemMarks;
-    existMarks.internalAssessment = internalAssessment ?? existMarks.internalAssessment;
+    const existMarks = await Marks.findOne({
+      course: courseDetails._id,
+      department: departmentDetails._id,
+      studentId: studentDetails._id,
+      subjectId: subjectDetails._id,
+      semester: semesterDetails._id,
+    });
+    if (!existMarks) {
+      return res.status(400).json({ message: `No marks found for this student ${EnrollmentId} and subject ${subjectCode}` });
+    }
 
-    await existMarks.save();
+    const updateFields = {
+      ...(midSemMarks && {midSemMarks}),
+      ...(endSemMarks && {endSemMarks}),
+      ...(internalAssessment && {internalAssessment}),
+    }
+
+    await Marks.findByIdAndUpdate(existMarks._id, updateFields, {new: true});
 
     return res.status(200).json({ message: "Marks updated successfully", marks: existMarks });
   } catch (error) {
@@ -45,22 +126,139 @@ const updateMarks = async (req, res) => {
   }
 };
 
-const getAllMarks = async (req, res) => {
-  const { studentId, semester, subjectId } = req.body;
+const deleteMarks = async (req,res) =>{
+  const {
+    course,
+    department,
+    EnrollmentId,
+    subjectCode,
+    semester,
+    midSemMarks,
+    endSemMarks,
+    internalAssessment
+  } = req.body;
 
   try {
-    const query = {};
-    if (studentId) query.studentId = studentId;
-    if (semester) query.semester = semester;
-    if (subjectId) query.subjectId = subjectId;
-
-    const allMarks = await Marks.find(query);
-
-    if (!allMarks || allMarks.length === 0) {
-      return res.status(404).json({ message: "Marks not found" });
+    const courseDetails = await Course.findOne({name: course});
+    if(!courseDetails){
+      return res.status(404).json({message: `Course ${course} not found`});
+    }
+    
+    const departmentDetails = await Department.findOne({abbreviation: department});
+    if(!departmentDetails){
+      return res.status(404).json({message: `Department ${department} not found`});
+    }
+    
+    const semesterDetails = await Semester.findOne({semesterNumber: semester});
+    if(!semesterDetails){
+      return res.status(404).json({message: `Semester ${semester} not found`});
+    }
+    
+    const studentDetails = await Student.findOne({EnrollmentId});
+    if(!studentDetails){
+      return res.status(404).json({message: `Student ${EnrollmentId} not found`});
+    }
+    
+    const subjectDetails = await Subject.findOne({subjectCode});
+    if(!subjectDetails){
+      return res.status(404).json({message: `Subject ${subjectCode} not found`});
     }
 
-    return res.status(200).json({ message: "Marks fetched successfully", marks: allMarks });
+    const existMarks = await Marks.findOne({
+      course: courseDetails._id,
+      department: departmentDetails._id,
+      studentId: studentDetails._id,
+      subjectId: subjectDetails._id,
+      semester: semesterDetails._id,
+    });
+    if (!existMarks) {
+      return res.status(400).json({ message: `No marks found for the student ${EnrollmentId} and subject ${subjectCode}` });
+    }
+
+    const updatedFields = {
+      ...(midSemMarks !== undefined && { midSemMarks: null }),
+      ...(endSemMarks !== undefined && { endSemMarks: null }),
+      ...(internalAssessment !== undefined && { internalAssessment: null }),
+    };
+
+    if (Object.keys(updatedFields).length === 0) {
+      return res.status(400).json({ message: "No valid fields provided to reset" });
+    }
+
+    await Marks.updateOne(
+      { _id: existMarks._id },
+      { $set: updatedFields }
+    );
+
+    return res.status(200).json({
+      message: `Marks deleted successfully for student ${EnrollmentId} in subject ${subjectCode}`,
+    });
+
+  } catch (error) {
+    console.error("Error resetting marks:", error.message);
+    return res.status(500).json({message: "Failed to reset marks",error: error.message});
+  }
+}
+
+const getMarksOfStudent = async (req, res) => {
+  const {
+    course,
+    department,
+    EnrollmentId,
+    subjectCode,
+    semester,
+  } = req.body;
+
+  try {
+    const courseDetails = await Course.findOne({name: course});
+    if(!courseDetails){
+      return res.status(404).json({message: `Course ${course} not found`});
+    }
+    
+    const departmentDetails = await Department.findOne({abbreviation: department});
+    if(!departmentDetails){
+      return res.status(404).json({message: `Department ${department} not found`});
+    }
+    
+    const semesterDetails = await Semester.findOne({semesterNumber: semester});
+    if(!semesterDetails){
+      return res.status(404).json({message: `Semester ${semester} not found`});
+    }
+    
+    const studentDetails = await Student.findOne({EnrollmentId});
+    if(!studentDetails){
+      return res.status(404).json({message: `Student ${EnrollmentId} not found`});
+    }
+    
+    const subjectDetails = await Subject.findOne({subjectCode});
+    if(!subjectDetails){
+      return res.status(404).json({message: `Subject ${subjectCode} not found`});
+    }
+
+    const marks = await Marks.findOne({
+      course: courseDetails._id,
+      department: departmentDetails._id,
+      studentId: studentDetails._id,
+      subjectId: subjectDetails._id,
+      semester: semesterDetails._id,
+    })
+    .populate("course", "name")
+    .populate("department", "name")
+    .populate("semester", "semesterNumber")
+    .populate({
+      path: 'studentId',
+      select: 'DBid EnrollmentId',
+      populate: {
+        path: 'DBid',
+        select: 'fullName email gender photo'
+      }
+    })
+    .populate("subjectId", "subjectName subjectCode")
+    if (!marks) {
+      return res.status(400).json({ message: `No marks found for the student ${EnrollmentId} and subject ${subjectCode}` });
+    }
+
+    return res.status(200).json({ message: "Marks fetched successfully", marks: marks });
   } catch (error) {
     console.error("Error fetching marks:", error);
     return res.status(500).json({ message: "Server error", error: error.message });
@@ -70,5 +268,6 @@ const getAllMarks = async (req, res) => {
 module.exports = {
   addMarks,
   updateMarks,
-  getAllMarks
+  deleteMarks,
+  getMarksOfStudent
 };

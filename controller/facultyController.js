@@ -3,7 +3,7 @@ const Faculty = require("../models/Faculty");
 const addUser = require("../utils/addUser");
 
 const addFaculty = async (req, res) => {
-  const { fullName, email, phone, gender, employeeID, designation, department } = req.body;
+  const { fullName, email, phone, gender, employeeID, designation, department, joiningYear } = req.body;
 
   try {
     const newUser = await addUser(fullName, email, phone, gender);
@@ -20,6 +20,7 @@ const addFaculty = async (req, res) => {
       employeeID,
       designation,
       department: getDepartment._id,
+      joiningYear
     });
 
     await newFaculty.save();

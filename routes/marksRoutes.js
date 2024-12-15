@@ -1,11 +1,12 @@
 const express = require("express");
-const { addMarks, updateMarks, getAllMarks } = require("../controller/marksController");
+const { addMarks, updateMarks, getMarksOfStudent, deleteMarks } = require("../controller/marksController");
 const { isProfessor } = require("../middlewares/authMiddleware");
 const router = express.Router();
 
-router.use(isProfessor);
+// router.use(isProfessor);
 router.post("/add", addMarks);
-router.put("/update", updateMarks);
-router.post("/", getAllMarks);
+router.post("/", getMarksOfStudent);
+router.put("/", updateMarks);
+router.delete("/delete", deleteMarks);
 
 module.exports = router;

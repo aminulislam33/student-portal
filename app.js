@@ -29,14 +29,14 @@ app.use(verifyToken);
 app.use('/api/register', registrationRouter);
 app.use('/api/profile', profileRouter);
 app.use('/api/admin', adminRouter);
-app.use("/api/subjects", subjectRouter);
-app.use('/api/marks', marksRouter);
 app.use('/api/calculate', calculateRouter);
 app.use('/api/departments', departmentRouter);
 app.use('/api/courses', courseRouter);
 app.use('/api/faculties', facultyRouter);
 app.use('/api/semesters', semesterRouter);
+app.use("/api/subjects", subjectRouter);
 app.use('/api/students', studentsRouter);
+app.use('/api/marks', marksRouter);
 app.use('/api/bulkentry', bulkEntryRouter);
 
 module.exports = app;

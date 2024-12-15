@@ -76,20 +76,6 @@ const addSemester = async (req, res) => {
   
       await newSemester.save();
   
-      if (students && students.length > 0) {
-        await Student.updateMany(
-          { _id: { $in: students } },
-          { $addToSet: { semesters: newSemester._id } }
-        );
-      }
-  
-      if (subjects && subjects.length > 0) {
-        await Subject.updateMany(
-          { _id: { $in: subjects } },
-          { $addToSet: { semester: newSemester._id } }
-        );
-      }
-  
       return res.status(201).json({ message: 'Semester added successfully', semester: newSemester });
     } catch (error) {
       console.error('Error adding semester:', error);
@@ -241,7 +227,11 @@ const getAllSemesters = async (req,res)=>{
     try {
         const allSemesters = await Semester.find({})
         .populate("department", "abbreviation")
-        .populate("course", "name");
+        .populate("course", "name")
+        .populate({
+          path: "subjects",
+          select: "subjectName subjectCode"
+        })
         if(!allSemesters){return res.status(400).json({message: "Semesters not found"})};
 
         return res.status(200).json({message: "Semester fetch successful", semesters: allSemesters});

@@ -20,6 +20,10 @@ const facultySchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Department',
     },
+    joiningYear: {
+        type: Number,
+        required: true,
+    },
     isHOD: {
         type: Boolean,
         default: false,
