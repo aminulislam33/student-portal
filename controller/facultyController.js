@@ -5,7 +5,7 @@ const addUser = require("../utils/addUser");
 const generateOTP = require("../utils/otpGenerator");
 
 const addFaculty = async (req, res) => {
-  const { fullName, email, phone, gender, employeeID, designation, department, joiningYear } = req.body;
+  const { fullName, email, phone, gender, facultyID, designation, department, joiningYear } = req.body;
 
   try {
     const newUser = await addUser(fullName, email, phone, gender);
@@ -19,7 +19,7 @@ const addFaculty = async (req, res) => {
 
     const newFaculty = new Faculty({
       DBid: userId,
-      employeeID,
+      facultyID,
       designation,
       department: getDepartment._id,
       joiningYear
@@ -54,7 +54,7 @@ const addFaculty = async (req, res) => {
 
 const updateFaculty = async (req, res) => {
   const { id } = req.params;
-  const { fullName, email, phone, gender, employeeID, designation, department } = req.body;
+  const { fullName, email, phone, gender, facultyID, designation, department } = req.body;
 
   try {
     let departmentId = null;
@@ -71,7 +71,7 @@ const updateFaculty = async (req, res) => {
       ...(email && { email }),
       ...(phone && { phone }),
       ...(gender && { gender }),
-      ...(employeeID && { employeeID }),
+      ...(facultyID && { facultyID }),
       ...(designation && { designation }),
       ...(departmentId && { department: departmentId }),
     };
@@ -157,10 +157,10 @@ const getAllFaculties = async (req, res) => {
 };
 
 const initiateAccountSetup = async (req, res) => {
-  const { employeeID } = req.body;
+  const { facultyID } = req.body;
 
   try {
-      const faculty = await Faculty.findOne({ employeeID }).populate("DBid", "email");
+      const faculty = await Faculty.findOne({ facultyID }).populate("DBid", "email");
       if (!faculty) {
           return res.status(404).json({ message: 'Faculty not found' });
       }
@@ -193,10 +193,10 @@ const initiateAccountSetup = async (req, res) => {
 };
 
 const verifyOtp = async (req, res) => {
-  const { employeeID, otp } = req.body;
+  const { facultyID, otp } = req.body;
 
   try {
-      const faculty = await Faculty.findOne({ employeeID });
+      const faculty = await Faculty.findOne({ facultyID });
 
       if (!faculty || faculty.otpExpires < Date.now()) {
           return res.status(400).json({ message: 'Invalid or expired OTP' });
@@ -214,10 +214,10 @@ const verifyOtp = async (req, res) => {
 };
 
 const createPassword = async (req, res) => {
-    const { employeeID, password } = req.body;
+    const { facultyID, password } = req.body;
 
     try {
-        const faculty = await Faculty.findOne({ employeeID }).populate("DBid", "password");
+        const faculty = await Faculty.findOne({ facultyID }).populate("DBid", "password");
         if (!faculty) {
             return res.status(404).json({ message: 'Faculty not found' });
         }

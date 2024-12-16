@@ -12,24 +12,24 @@ const bulkEntryOfProfessors = async (req, res) => {
         const data = xlsx.utils.sheet_to_json(sheet);
 
         for (const faculty of data) {
-            const {fullName, email, gender, employeeID, designation, department, joiningYear} = faculty;
+            const {fullName, email, gender, facultyID, designation, department, joiningYear} = faculty;
 
             const user = await addUser(fullName, email, gender);
             if(!user){
-                console.warn(`User creation failed for the professor: ${employeeID}`);
+                console.warn(`User creation failed for the professor: ${facultyID}`);
                 continue;
             };
             const userId = user?._id || user;
 
             const departmentDetails = await Department.findOne({ name: department });
             if (!departmentDetails) {
-                console.warn(`Department "${department}" not found for professor: ${employeeID}`);
+                console.warn(`Department "${department}" not found for professor: ${facultyID}`);
                 continue;
             };
 
             const newFaculty = new Faculty({
                 DBid: userId,
-                employeeID,
+                facultyID,
                 designation,
                 department: departmentDetails._id,
                 joiningYear,
