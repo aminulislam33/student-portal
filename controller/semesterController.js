@@ -85,7 +85,7 @@ const addSemester = async (req, res) => {
 
   const updateSemester = async (req, res) => {
     const { id } = req.params;
-    const { semesterNumber, department, subjects, totalCredits, totalMarks, students } = req.body;
+    const { course, year, semesterNumber, department, subjects, totalCredits, totalMarks, students } = req.body;
   
     try {
       const semester = await Semester.findById(id);
@@ -96,6 +96,11 @@ const addSemester = async (req, res) => {
       const departmentDoc = await Department.findOne({ abbreviation: department });
       if (!departmentDoc) {
         return res.status(404).json({ message: `Department '${department}' not found` });
+      }
+
+      const courseDetails = await Course.findOne({name: course});
+      if (!courseDetails) {
+        return res.status(404).json({ message: `Course '${course}' not found` });
       }
 
       const missingSubjects = [];
@@ -135,6 +140,8 @@ const addSemester = async (req, res) => {
       }
   
       const updatedFields = {
+        ...(course && {course: courseDetails._id}),
+        ...(year && { year }),
         ...(semesterNumber && { semesterNumber }),
         ...(department && { department: departmentDoc._id }),
         ...(subjects && { subjects: subjectIDs }),
