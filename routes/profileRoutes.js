@@ -4,7 +4,6 @@ const { verifyToken } = require('../middlewares/authMiddleware');
 const uploadToCloudinary = require('../config/cloudinary');
 
 const router = express.Router();
-router.use(verifyToken);
 
 router.get('/', getProfile);
 router.put('/update', updateProfile);

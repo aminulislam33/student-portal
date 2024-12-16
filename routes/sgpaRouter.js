@@ -1,7 +1,7 @@
 const express = require("express");
-const calculateSGPAController = require("../controller/calculateSGPAController");
+const calculateGPAController = require("../controller/calculateSGPAController");
 const router = express.Router();
 
-router.post("/sgpa", calculateSGPAController);
+router.post("/", calculateGPAController);
 
 module.exports = router;

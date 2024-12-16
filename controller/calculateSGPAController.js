@@ -1,7 +1,7 @@
 const Student = require("../models/Student");
 const calculateSGPA = require("../utils/calculateSGPA");
 
-const calculateSGPAController = async (req, res) => {
+const calculateGPAController = async (req, res) => {
   const { studentId } = req.body;
 
   try {
@@ -16,4 +16,4 @@ const calculateSGPAController = async (req, res) => {
   }
 };
 
-module.exports = calculateSGPAController;
+module.exports = calculateGPAController;

@@ -1,6 +1,5 @@
 const express = require('express');
 const { addSemester, getAllSemesters, getSemesterById, updateSemester, deleteSemester } = require('../controller/semesterController.js');
-const { route } = require('./registrationRoutes.js.js');
 const { isHOD } = require('../middlewares/authMiddleware.js');
 const router = express.Router();
 
