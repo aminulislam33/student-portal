@@ -6,7 +6,7 @@ const facultySchema = new mongoose.Schema({
         ref: 'User',
         unique: true,
     },
-    employeeID: {
+    facultyID: {
         type: String,
         unique: true,
         required: true,
