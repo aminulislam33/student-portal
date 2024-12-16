@@ -130,7 +130,8 @@ const deleteCourse = async (req, res) => {
   
 const getAllCourses = async (req,res)=>{
     try {
-        const allCourses = await Course.find({});
+        const allCourses = await Course.find({})
+        .populate("departments", "name")
         if(!allCourses){return res.status(400).json({message: "Courses not found"})};
 
         return res.status(200).json({message: "Courses fetch successful", allCourses});
