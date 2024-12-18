@@ -1,23 +1,24 @@
 const Marks = require("../models/Marks");
-const Subject = require("../models/Subject");
 
-const calculateSGPA = async (studentId, semesterSubjects) => {
+const calculateSGPA = async (student, semesterSubjects) => {
   let totalGradePoints = 0;
   let totalCredits = 0;
 
-  for (const subjectId of semesterSubjects) {
+  const { _id: studentId, EnrollmentId } = student;
 
-    const subject = await Subject.findById(subjectId);
-    if (!subject) throw new Error(`Subject with id ${subjectId} not found`);
+  for (const subject of semesterSubjects) {
+    const { _id: subjectId, subjectName, fullMarks, credits } = subject;
 
-    const { fullMarks, credits } = subject;
+    console.log("from: ", subject.subjectName);
 
     const marks = await Marks.findOne({ studentId, subjectId });
-    if (!marks) throw new Error(`Marks not found for student ${studentId} in subject ${subjectId}`);
+    if (!marks) {
+      throw new Error(
+        `Marks not found for student with Enrollment ID "${EnrollmentId}" in subject "${subjectName}"`
+      );
+    }
 
     const { midSemMarks, endSemMarks, internalAssessment } = marks;
-
-
     const obtainedMarks = midSemMarks + endSemMarks + internalAssessment;
     const percentage = (obtainedMarks / fullMarks) * 100;
 
@@ -32,6 +33,12 @@ const calculateSGPA = async (studentId, semesterSubjects) => {
 
     totalGradePoints += gradePoint * credits;
     totalCredits += credits;
+  }
+
+  if (totalCredits === 0) {
+    throw new Error(
+      `No subjects with valid credits found for student with Enrollment ID "${enrollmentId}"`
+    );
   }
 
   const sgpa = totalGradePoints / totalCredits;

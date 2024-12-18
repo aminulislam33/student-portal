@@ -47,6 +47,28 @@ const addMarks = async (req, res) => {
       return res.status(404).json({message: `Subject ${subjectCode} not found`});
     }
 
+    const existMarks = await Marks.findOne({
+      course: courseDetails._id,
+      department: departmentDetails._id,
+      studentId: studentDetails._id,
+      subjectId: subjectDetails._id,
+      semester: semesterDetails._id,
+    });
+
+    if(existMarks){
+      return res.status(409).json({
+        message: `Marks already for the following data:
+        Cours: ${course},
+        Department:  ${departmentDetails.name}
+        Student: ${studentDetails.EnrollmentId}
+        Semester: ${semesterDetails.semesterNumber},
+        Subject: ${subjectDetails.subjectName},
+        Mid sem marks: ${existMarks.midSemMarks},
+        End sem marks: ${existMarks.endSemMarks},
+        Internal assessment: ${existMarks.internalAssessment}`
+      })
+    }
+
     const marksEntry = new Marks({
       course: courseDetails._id,
       department: departmentDetails._id,
@@ -176,7 +198,7 @@ const deleteMarks = async (req,res) =>{
       semester: semesterDetails._id,
     });
     if (!existMarks) {
-      return res.status(400).json({ message: `No marks found for the student ${EnrollmentId} and subject ${subjectCode}` });
+      return res.status(404).json({ message: `No marks found for the student ${EnrollmentId} and subject ${subjectCode}` });
     }
 
     const updatedFields = {

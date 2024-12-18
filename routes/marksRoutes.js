@@ -3,9 +3,9 @@ const { addMarks, updateMarks, getMarksOfStudent, deleteMarks } = require("../co
 const { isProfessor } = require("../middlewares/authMiddleware");
 const router = express.Router();
 
+router.post("/", getMarksOfStudent);
 // router.use(isProfessor);
 router.post("/add", addMarks);
-router.post("/", getMarksOfStudent);
 router.put("/", updateMarks);
 router.delete("/delete", deleteMarks);
 
